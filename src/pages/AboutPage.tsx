@@ -1,0 +1,9 @@
+import { PageHero } from '../components/PageHero'
+import type { Navigate } from '../types/navigation'
+
+export function AboutPage({ navigate }: { navigate: Navigate }) {
+  return <><PageHero eyebrow="Despre atelier" title="Croit cu răbdare. Montat cu precizie.">Draperii Valentina Plop este un atelier local din Chișinău dedicat textilelor de interior realizate la comandă.</PageHero>
+    <section className="about-story section-pad"><div className="about-collage"><img src="/images/consultanta.jpg" alt="Alegerea materialelor în salon"/><img src="/images/coasere.jpg" alt="Coaserea draperiilor în atelier"/></div><div><span className="eyebrow">Filosofia noastră</span><h2>Casa ta nu seamănă cu nicio alta. Nici draperiile nu ar trebui.</h2><p>Fiecare proiect pornește de la felul în care trăiești: câtă lumină îți dorești, ce culori te liniștesc și ce atmosferă vrei să creezi.</p><p>Îmbinăm consultanța atentă cu execuția artizanală și montajul precis. Rezultatul este o soluție frumoasă, funcțională și făcută pentru spațiul tău.</p><div className="values"><span><b>Personal</b><small>Recomandări potrivite casei tale</small></span><span><b>Local</b><small>Atelier și salon în Chișinău</small></span><span><b>Complet</b><small>De la alegere până la montaj</small></span></div></div></section>
+    <section className="materials"><div><span className="eyebrow light">Materiale & detalii</span><h2>Calitatea se vede.<br/>Și se simte.</h2></div><div className="material-list"><span><b>01</b>In natural</span><span><b>02</b>Catifea</span><span><b>03</b>Blackout</span><span><b>04</b>Texturi soft</span><span><b>05</b>Lemn natural</span><span><b>06</b>Accesorii</span></div></section>
+    <section className="cta-band"><div><span className="eyebrow">Descoperă materialele</span><h2>Te așteptăm în salon.</h2></div><button className="btn primary" onClick={()=>navigate('/contact')}>Vezi contactele →</button></section></>
+}
