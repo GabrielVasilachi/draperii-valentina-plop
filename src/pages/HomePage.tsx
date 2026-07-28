@@ -63,29 +63,6 @@ export function HomePage({ navigate }: { navigate: Navigate }) {
           </div>
         </div>
       </section>
-      <section className="intro section-pad">
-        <div>
-          <span className="eyebrow">Eleganță · Stil · Confort</span>
-          <h2>
-            Totul începe cu lumina
-            <br />
-            din camera ta.
-          </h2>
-        </div>
-        <div>
-          <p>
-            Credem că draperiile nu sunt doar un detaliu decorativ. Ele definesc
-            lumina, intimitatea și starea de bine a unei încăperi.
-          </p>
-          <p>
-            În salon alegem împreună țesătura, nuanța și sistemul potrivit, apoi
-            ne ocupăm de măsurare, coasere și montare.
-          </p>
-          <button className="link-btn" onClick={() => navigate("/despre-noi")}>
-            Povestea atelierului ↗
-          </button>
-        </div>
-      </section>
       <section
         className="trusted-by section-pad"
         aria-labelledby="trusted-by-title"
@@ -110,6 +87,29 @@ export function HomePage({ navigate }: { navigate: Navigate }) {
           ))}
         </div>
       </section>
+      <section className="intro section-pad">
+        <div>
+          <span className="eyebrow">Eleganță · Stil · Confort</span>
+          <h2>
+            Totul începe cu lumina
+            <br />
+            din camera ta.
+          </h2>
+        </div>
+        <div>
+          <p>
+            Credem că draperiile nu sunt doar un detaliu decorativ. Ele definesc
+            lumina, intimitatea și starea de bine a unei încăperi.
+          </p>
+          <p>
+            În salon alegem împreună țesătura, nuanța și sistemul potrivit, apoi
+            ne ocupăm de măsurare, coasere și montare.
+          </p>
+          <button className="link-btn" onClick={() => navigate("/despre-noi")}>
+            Povestea atelierului ↗
+          </button>
+        </div>
+      </section>
       <section className="featured section-pad">
         <div className="section-heading">
           <div>
@@ -128,6 +128,14 @@ export function HomePage({ navigate }: { navigate: Navigate }) {
               <ProductCard key={p.id} product={p} navigate={navigate} />
             ))}
         </div>
+      </section>
+      <section className="quote section-pad">
+        <span className="quote-mark">“</span>
+        <blockquote>
+          Când alegem materialul potrivit, nu decorăm doar o fereastră —
+          schimbăm felul în care se simte întreaga casă.
+        </blockquote>
+        <p>— Valentina Plop</p>
       </section>
       <section className="service-preview">
         <div className="service-image">
@@ -159,14 +167,6 @@ export function HomePage({ navigate }: { navigate: Navigate }) {
             Cum lucrăm →
           </button>
         </div>
-      </section>
-      <section className="quote section-pad">
-        <span className="quote-mark">“</span>
-        <blockquote>
-          Când alegem materialul potrivit, nu decorăm doar o fereastră —
-          schimbăm felul în care se simte întreaga casă.
-        </blockquote>
-        <p>— Valentina Plop</p>
       </section>
       <section className="cta-band">
         <div>
