@@ -40,14 +40,15 @@
   border-radius: 50%;
   display: grid;
   place-items: center;
-  font-family: 'Italiana', serif;
-  font-size: 18px
+  font-family: 'DM Sans', Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 600
 }
 .brand b {
   display: block;
-  font-family: 'Italiana', serif;
+  font-family: 'DM Sans', Arial, sans-serif;
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1
 }
 .brand small {
@@ -118,8 +119,9 @@ p {
 }
 h1,
 h2 {
-  font-family: 'Italiana', serif;
-  font-weight: 400
+  font-family: 'DM Sans', Arial, sans-serif;
+  font-weight: 500;
+  letter-spacing: -.025em
 }
 .eyebrow {
   display: inline-flex;
@@ -203,13 +205,14 @@ h2 {
 }
 .hero-copy h1 {
   font-size: clamp(54px, 6vw, 92px);
-  line-height: .98;
-  letter-spacing: -.045em;
+  line-height: 1.02;
+  letter-spacing: -.035em;
   margin: 28px 0 30px
 }
 .hero-copy h1 em {
   color: #9b8066;
-  font-style: italic
+  font-style: normal;
+  font-weight: 500
 }
 .hero-copy > p {
   max-width: 520px;
@@ -234,9 +237,9 @@ h2 {
   flex-direction: column
 }
 .hero-proof b {
-  font-family: 'Italiana', serif;
+  font-family: 'DM Sans', Arial, sans-serif;
   font-size: 21px;
-  font-weight: 400
+  font-weight: 500
 }
 .hero-proof small {
   font-size: 9px;
@@ -271,8 +274,8 @@ h2 {
   margin-bottom: 8px
 }
 .hero-note b {
-  font-family: 'Italiana', serif;
-  font-weight: 400;
+  font-family: 'DM Sans', Arial, sans-serif;
+  font-weight: 500;
   font-size: 19px
 }
 .intro {
@@ -360,9 +363,10 @@ h2 {
   font-size: 8px
 }
 .product-meta h3 {
-  font-family: 'Italiana', serif;
+  font-family: 'DM Sans', Arial, sans-serif;
   font-size: 24px;
-  font-weight: 400;
+  font-weight: 500;
+  letter-spacing: -.02em;
   margin: 8px 0 10px
 }
 .product-meta p {
@@ -434,8 +438,8 @@ h2 {
   width: 52px
 }
 .step b {
-  font-family: 'Italiana', serif;
-  font-weight: 400;
+  font-family: 'DM Sans', Arial, sans-serif;
+  font-weight: 500;
   font-size: 19px
 }
 .service-copy .btn {
@@ -449,15 +453,18 @@ h2 {
 }
 .quote-mark {
   color: #bca58b;
-  font-family: 'Italiana', serif;
+  font-family: 'DM Sans', Arial, sans-serif;
   font-size: 80px;
+  font-weight: 400;
   height: 50px;
   display: block
 }
 .quote blockquote {
-  font-family: 'Italiana', serif;
+  font-family: 'DM Sans', Arial, sans-serif;
   font-size: clamp(30px, 4vw, 58px);
-  line-height: 1.25;
+  font-weight: 400;
+  letter-spacing: -.025em;
+  line-height: 1.2;
   margin: 25px auto 30px
 }
 .quote p {
@@ -627,8 +634,9 @@ h2 {
   background: var(--cream);
   display: grid;
   place-items: center;
-  font-family: 'Italiana';
-  font-size: 24px
+  font-family: 'DM Sans', Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 500
 }
 .service-row h2 {
   font-size: clamp(46px, 5vw, 72px);
@@ -703,9 +711,9 @@ h2 {
   flex-direction: column
 }
 .values b {
-  font-family: 'Italiana';
+  font-family: 'DM Sans', Arial, sans-serif;
   font-size: 20px;
-  font-weight: 400
+  font-weight: 500
 }
 .values small {
   font-size: 9px;
@@ -733,8 +741,9 @@ h2 {
 .material-list span {
   border-top: 1px solid rgba(255, 255, 255, .15);
   padding: 22px 0;
-  font-family: 'Italiana';
-  font-size: 20px
+  font-family: 'DM Sans', Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500
 }
 .material-list b {
   color: #9f8c77;
@@ -774,8 +783,10 @@ h2 {
   text-underline-offset: 4px
 }
 .info-block .big-link {
-  font-family: 'Italiana';
-  font-size: 28px;
+  font-family: 'DM Sans', Arial, sans-serif;
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: -.02em;
   text-decoration: none
 }
 .contact-form-box {
