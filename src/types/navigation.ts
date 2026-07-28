@@ -1,1 +1,1 @@
-export type Navigate = (to: string) => void
+export type Navigate = (to: string) => void;
