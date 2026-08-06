@@ -1,3 +1,4 @@
+/** Product available in the made-to-measure catalog. */
 export type Product = {
   id: number;
   slug: string;
