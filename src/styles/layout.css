@@ -1,0 +1,263 @@
+.announcement {
+  min-height: 32px;
+  padding: 6px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  background: var(--deep-brown);
+  color: #f2ede6;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.announcement a {
+  font-weight: 600;
+  text-underline-offset: 3px;
+}
+
+.site-header {
+  height: 84px;
+  padding: 0 clamp(20px, 4vw, 64px);
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  position: relative;
+  z-index: 30;
+  border-bottom: 1px solid var(--line);
+  background: rgba(247, 245, 240, 0.96);
+  backdrop-filter: blur(14px);
+}
+
+.brand {
+  padding: 0;
+  border: 0;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+}
+
+.brand-mark {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--brown);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.brand b {
+  display: block;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.025em;
+}
+
+.brand small {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+}
+
+.main-nav {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 2vw, 30px);
+}
+
+.main-nav button,
+.shop-nav button,
+.footer button {
+  padding: 8px 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.main-nav button {
+  position: relative;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.main-nav button::after {
+  height: 1px;
+  position: absolute;
+  right: 50%;
+  bottom: 2px;
+  left: 50%;
+  background: var(--ink);
+  content: "";
+  transition: 0.2s;
+}
+
+.main-nav button:hover::after,
+.main-nav button.active::after {
+  right: 0;
+  left: 0;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-actions > a {
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.header-cta {
+  min-height: 44px;
+  padding: 0 21px;
+  border: 0;
+  background: var(--brown);
+  color: white;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.shop-nav {
+  min-height: 44px;
+  padding: 0 clamp(20px, 4vw, 64px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(18px, 3vw, 46px);
+  position: relative;
+  z-index: 20;
+  border-bottom: 1px solid var(--line);
+  background: white;
+}
+
+.shop-nav button {
+  color: #5e5952;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.shop-nav button:hover {
+  color: var(--ink);
+}
+
+.shop-nav .shop-nav-offer {
+  margin-left: auto;
+  color: var(--clay);
+}
+
+.footer {
+  padding: 72px clamp(24px, 6vw, 96px) 26px;
+  background: var(--deep-brown);
+  color: #eee8df;
+}
+
+.footer-brand {
+  padding-bottom: 48px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.footer-mark {
+  width: 50px;
+  height: 50px;
+  border-color: #b7a998;
+}
+
+.footer-brand b {
+  font-size: 20px;
+  letter-spacing: -0.03em;
+}
+
+.footer-brand p {
+  margin: 4px 0 0;
+  color: #a99f93;
+  font-size: 13px;
+}
+
+.footer-links {
+  padding: 48px 0 60px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+}
+
+.footer h3 {
+  margin-bottom: 18px;
+  color: #9e9284;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.footer p,
+.footer a,
+.footer button {
+  color: #d5cdc3;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.footer button {
+  display: block;
+}
+
+.footer-phone {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px !important;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  color: #867d73;
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.floating-call {
+  height: 50px;
+  padding: 0 19px;
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  background: var(--brown);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+  color: white;
+  font-size: 13px;
+  text-decoration: none;
+}
