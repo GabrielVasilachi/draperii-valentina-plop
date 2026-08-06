@@ -1,11 +1,17 @@
 import { useEffect, useState } from "react";
-import { SiteLayout } from "./components/SiteLayout";
-import { HomePage } from "./pages/HomePage";
-import { CatalogPage } from "./pages/CatalogPage";
-import { ServicesPage } from "./pages/ServicesPage";
-import { AboutPage } from "./pages/AboutPage";
-import { ContactPage } from "./pages/ContactPage";
-import "./App.css";
+import { AboutPage } from "../features/about/AboutPage";
+import { CatalogPage } from "../features/catalog/CatalogPage";
+import { ContactPage } from "../features/contact/ContactPage";
+import { HomePage } from "../features/home/HomePage";
+import { ServicesPage } from "../features/services/ServicesPage";
+import { SiteLayout } from "../layout/SiteLayout";
+import "../styles/base.css";
+import "../styles/layout.css";
+import "../styles/components.css";
+import "../styles/pages/home.css";
+import "../styles/pages/catalog.css";
+import "../styles/pages/content-pages.css";
+import "../styles/responsive.css";
 
 const normalizePath = (path: string) => path.replace(/\/+$/, "") || "/";
 
