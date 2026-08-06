@@ -23,11 +23,11 @@ export function ServicesPage({ navigate }: { navigate: Navigate }) {
       </section>
       <section className="cta-band">
         <div>
-          <span className="eyebrow">Proiectul tău poate începe azi</span>
-          <h2>Spune-ne ce îți dorești.</h2>
+          <span className="eyebrow">Toate etapele, într-un singur loc</span>
+          <h2>Consultanță, măsurări și montaj.</h2>
         </div>
         <button className="btn primary" onClick={() => navigate("/contact")}>
-          Cere o consultație →
+          Contact și program →
         </button>
       </section>
     </>

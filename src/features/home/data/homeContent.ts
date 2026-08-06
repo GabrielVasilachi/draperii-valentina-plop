@@ -38,11 +38,3 @@ export const heroSlides = [
     label: "Confort, intimitate și culoare",
   },
 ] as const;
-
-export const companyPlaceholders = [
-  "Partener 01",
-  "Partener 02",
-  "Partener 03",
-  "Partener 04",
-  "Partener 05",
-] as const;

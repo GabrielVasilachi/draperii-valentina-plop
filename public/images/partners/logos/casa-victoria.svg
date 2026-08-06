@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 170" role="img" aria-labelledby="title description">
+  <title id="title">Casa de Nunți Victoria</title>
+  <desc id="description">Semnătura tipografică a Casei de Nunți Victoria</desc>
+  <g fill="#49382d" text-anchor="middle">
+    <text x="210" y="42" font-family="Georgia, 'Times New Roman', serif" font-size="18" letter-spacing="5">CASA DE NUNȚI</text>
+    <text x="210" y="105" font-family="Georgia, 'Times New Roman', serif" font-size="55" letter-spacing="4">VICTORIA</text>
+    <path d="M82 130h90M248 130h90" fill="none" stroke="#b68b58" stroke-width="2"/>
+    <circle cx="210" cy="130" r="4" fill="#b68b58"/>
+    <path d="M194 130h9m14 0h9" fill="none" stroke="#b68b58" stroke-width="2"/>
+  </g>
+</svg>

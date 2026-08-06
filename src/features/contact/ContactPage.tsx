@@ -7,9 +7,9 @@ export function ContactPage() {
     <>
       <PageHero
         eyebrow="Contact"
-        title="Hai să găsim soluția potrivită casei tale."
+        title="Salon, mostre și consultanță."
       >
-        Sună-ne sau vino să vezi mostrele în salon.
+        Aici găsești adresa, programul și modalitățile de contact.
       </PageHero>
       <section className="contact-wrap section-pad">
         <ContactDetails />

@@ -114,7 +114,7 @@ export function ProductGalleryModal({
         </div>
 
         <button className="btn primary gallery-offer" onClick={requestOffer}>
-          Cere o ofertă pentru acest model
+          Disponibilitate și detalii
         </button>
       </section>
     </div>

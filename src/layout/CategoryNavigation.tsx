@@ -9,9 +9,7 @@ export function CategoryNavigation({ navigate }: { navigate: Navigate }) {
           {label}
         </button>
       ))}
-      <button className="shop-nav-offer" onClick={() => navigate("/contact")}>
-        Măsurări & montaj ↗
-      </button>
+      <span className="shop-nav-note">Realizate la comandă</span>
     </nav>
   );
 }

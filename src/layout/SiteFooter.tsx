@@ -41,7 +41,9 @@ export function SiteFooter({ navigate }: { navigate: Navigate }) {
           <a className="footer-phone" href="tel:+37369212709">
             +373 69 212 709
           </a>
-          <button onClick={() => navigate("/contact")}>Cere o ofertă →</button>
+          <button onClick={() => navigate("/contact")}>
+            Program și contact →
+          </button>
         </div>
       </div>
 

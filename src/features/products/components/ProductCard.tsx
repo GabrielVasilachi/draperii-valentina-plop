@@ -50,10 +50,10 @@ export function ProductCard({ product, navigate }: ProductCardProps) {
           <div className="product-buy-row">
             <span>La comandă</span>
             <button
-              onClick={() => navigate("/contact")}
-              aria-label={`Solicită ofertă pentru ${product.name}`}
+              onClick={() => setGalleryOpen(true)}
+              aria-label={`Vezi detaliile pentru ${product.name}`}
             >
-              Cere preț →
+              Vezi detalii →
             </button>
           </div>
         </div>

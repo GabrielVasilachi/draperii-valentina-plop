@@ -1,17 +1,68 @@
-import { companyPlaceholders } from "../data/homeContent";
+import { useState } from "react";
+import type { Navigate } from "../../../shared/types/navigation";
+import { PartnerGalleryModal } from "../components/PartnerGalleryModal";
+import { partnerProjects, type PartnerProject } from "../data/partners";
 
-export function TrustedCompaniesSection() {
+export function TrustedCompaniesSection({ navigate }: { navigate: Navigate }) {
+  const [selectedPartner, setSelectedPartner] = useState<PartnerProject | null>(
+    null,
+  );
+
   return (
-    <section className="trusted-by">
-      <div className="trusted-by-copy">
-        <span>Peste 350 de clienți satisfăcuți</span>
-        <b>Ne-au ales pentru spații în care oamenii se simt bine.</b>
-      </div>
-      <div className="company-row" aria-label="Companii partenere">
-        {companyPlaceholders.map((company) => (
-          <span key={company}>{company}</span>
-        ))}
-      </div>
-    </section>
+    <>
+      <section className="trusted-by" aria-labelledby="trusted-companies-title">
+        <div className="trusted-by-copy">
+          <span>Colaborări selectate</span>
+          <h2 id="trusted-companies-title">
+            Proiecte în spații cunoscute.
+          </h2>
+          <p>
+            Selectează un partener pentru a deschide galeria proiectului.
+          </p>
+        </div>
+
+        <div className="company-row" aria-label="Proiecte pentru parteneri">
+          {partnerProjects.map((partner) => (
+            <button
+              key={partner.id}
+              className={`partner-card ${partner.logoTone}`}
+              type="button"
+              onClick={() => setSelectedPartner(partner)}
+              aria-label={`Deschide galeria proiectului ${partner.name}`}
+            >
+              <span className="partner-card-logo">
+                <img
+                  src={partner.logo}
+                  alt={`Logo ${partner.name}`}
+                  loading="lazy"
+                />
+              </span>
+              <span className="partner-card-copy">
+                <span>
+                  <small>{partner.type}</small>
+                  <b>{partner.name}</b>
+                </span>
+                <span className="partner-card-action">
+                  {partner.images.length > 0
+                    ? `Vezi ${partner.images.length} ${
+                        partner.images.length === 1 ? "imagine" : "imagini"
+                      }`
+                    : "Galerie în pregătire"}
+                  <i>↗</i>
+                </span>
+              </span>
+            </button>
+          ))}
+        </div>
+      </section>
+
+      {selectedPartner && (
+        <PartnerGalleryModal
+          partner={selectedPartner}
+          navigate={navigate}
+          onClose={() => setSelectedPartner(null)}
+        />
+      )}
+    </>
   );
 }

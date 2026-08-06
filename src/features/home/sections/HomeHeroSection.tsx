@@ -59,13 +59,13 @@ export function HomeHeroSection({ navigate }: { navigate: Navigate }) {
           </button>
           <button
             className="hero-text-link"
-            onClick={() => navigate("/contact")}
+            onClick={() => navigate("/servicii")}
           >
-            Cere o consultație <span>↗</span>
+            Cum lucrăm <span>↗</span>
           </button>
         </div>
       </div>
-      <div className="hero-service-card">
+      {/* <div className="hero-service-card">
         <span>De la idee la montaj</span>
         <div>
           <b>01</b> Alegem
@@ -76,7 +76,7 @@ export function HomeHeroSection({ navigate }: { navigate: Navigate }) {
         <div>
           <b>03</b> Montăm
         </div>
-      </div>
+      </div> */}
       <div className="hero-slider-controls" aria-label="Galerie principală">
         <button
           onClick={() => changeSlide(-1)}

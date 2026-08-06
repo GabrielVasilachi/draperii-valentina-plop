@@ -61,10 +61,10 @@ export function CatalogPage({
         )}
       </section>
       <section className="catalog-note">
-        <span>Mai frumos în realitate</span>
-        <h2>Vino să simți texturile.</h2>
+        <span>Mostre disponibile în salon</span>
+        <h2>Descoperă materialele în lumină naturală.</h2>
         <button className="btn cream" onClick={() => navigate("/contact")}>
-          Programează o vizită →
+          Programul salonului →
         </button>
       </section>
     </>

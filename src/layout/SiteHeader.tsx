@@ -1,5 +1,6 @@
 import { useState } from "react";
 import type { Navigate } from "../shared/types/navigation";
+import { PhoneIcon } from "../shared/components/PhoneIcon";
 import { mainNavigation } from "./navigation";
 
 type SiteHeaderProps = {
@@ -59,11 +60,8 @@ export function SiteHeader({ path, navigate }: SiteHeaderProps) {
 
       <div className="header-actions">
         <a href="tel:+37369212709" aria-label="Sună atelierul">
-          ☎
+          <PhoneIcon />
         </a>
-        <button className="header-cta" onClick={() => go("/contact")}>
-          Cere ofertă
-        </button>
       </div>
     </header>
   );
