@@ -1,5 +1,5 @@
-import { PageHero } from "../components/PageHero";
-import type { Navigate } from "../types/navigation";
+import { PageHero } from "../../shared/components/PageHero";
+import type { Navigate } from "../../shared/types/navigation";
 
 export function AboutPage({ navigate }: { navigate: Navigate }) {
   return (
@@ -8,8 +8,7 @@ export function AboutPage({ navigate }: { navigate: Navigate }) {
         eyebrow="Despre atelier"
         title="Croit cu răbdare. Montat cu precizie."
       >
-        Draperii Valentina Plop este un atelier local din Chișinău dedicat
-        textilelor de interior realizate la comandă.
+        Atelier local. Textile la comandă. Grijă pentru fiecare detaliu.
       </PageHero>
       <section className="about-story section-pad">
         <div className="about-collage">
@@ -24,30 +23,23 @@ export function AboutPage({ navigate }: { navigate: Navigate }) {
         </div>
         <div>
           <span className="eyebrow">Filosofia noastră</span>
-          <h2>
-            Casa ta nu seamănă cu nicio alta. Nici draperiile nu ar trebui.
-          </h2>
+          <h2>Fiecare casă merită ceva făcut pentru ea.</h2>
           <p>
-            Fiecare proiect pornește de la felul în care trăiești: câtă lumină
-            îți dorești, ce culori te liniștesc și ce atmosferă vrei să creezi.
-          </p>
-          <p>
-            Îmbinăm consultanța atentă cu execuția artizanală și montajul
-            precis. Rezultatul este o soluție frumoasă, funcțională și făcută
-            pentru spațiul tău.
+            Alegem, croim și montăm fiecare proiect în jurul luminii și stilului
+            tău.
           </p>
           <div className="values">
             <span>
               <b>Personal</b>
-              <small>Recomandări potrivite casei tale</small>
+              <small>Alegem împreună</small>
             </span>
             <span>
               <b>Local</b>
-              <small>Atelier și salon în Chișinău</small>
+              <small>Atelier în Chișinău</small>
             </span>
             <span>
               <b>Complet</b>
-              <small>De la alegere până la montaj</small>
+              <small>De la idee la montaj</small>
             </span>
           </div>
         </div>
