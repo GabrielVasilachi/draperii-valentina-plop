@@ -1,7 +1,8 @@
 export const mainNavigation = [
   ["/", "Acasă"],
   ["/magazin", "Magazin"],
-  ["/urmareste-ne", "Urmărește-ne"],
+  ["/galerie", "Galerie"],
+  ["/recenzii", "Recenzii"],
   ["/despre-noi", "Despre noi"],
   ["/contact", "Contacte"],
 ] as const;

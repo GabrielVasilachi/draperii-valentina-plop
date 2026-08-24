@@ -13,7 +13,7 @@ export function HomePage({ navigate }: { navigate: Navigate }) {
       <TrustedCompaniesSection navigate={navigate} />
       <FeaturedProductsSection navigate={navigate} />
       <EditorialTrustSection navigate={navigate} />
-      <GoogleReviewsSection />
+      <GoogleReviewsSection navigate={navigate} />
       <HomeContactSection />
     </>
   );

@@ -3,7 +3,8 @@ import { AboutPage } from "../features/about/AboutPage";
 import { CatalogPage } from "../features/catalog/CatalogPage";
 import { ContactPage } from "../features/contact/ContactPage";
 import { HomePage } from "../features/home/HomePage";
-import { FollowUsPage } from "../features/social/FollowUsPage";
+import { GalleryPage } from "../features/gallery/GalleryPage";
+import { ReviewsPage } from "../features/reviews/ReviewsPage";
 import { ServicesPage } from "../features/services/ServicesPage";
 import { ProductDetailPage } from "../features/products/ProductDetailPage";
 import { products } from "../features/products/data/products";
@@ -46,7 +47,8 @@ function App() {
     page = <ProductDetailPage product={selectedProduct} navigate={navigate} />;
   else if (path.startsWith("/magazin"))
     page = <CatalogPage path={path} navigate={navigate} />;
-  else if (path === "/urmareste-ne") page = <FollowUsPage navigate={navigate} />;
+  else if (path === "/galerie" || path === "/urmareste-ne") page = <GalleryPage navigate={navigate} />;
+  else if (path === "/recenzii") page = <ReviewsPage />;
   else if (path === "/servicii") page = <ServicesPage navigate={navigate} />;
   else if (path === "/despre-noi") page = <AboutPage navigate={navigate} />;
   else if (path === "/contact") page = <ContactPage />;
