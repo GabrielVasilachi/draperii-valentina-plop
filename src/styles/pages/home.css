@@ -24,11 +24,17 @@
 .hero-service-list b { color: var(--brown); font-size: 13px; }
 .hero-service-summary > button { width: 100%; padding: 16px 0 4px; border: 0; display: flex; align-items: center; justify-content: space-between; background: transparent; cursor: pointer; font-size: 13px; font-weight: 700; text-transform: uppercase; }
 .hero-image-dots { padding: 9px 11px; position: absolute; bottom: 24px; left: 50%; z-index: 3; border-radius: 999px; display: flex; gap: 8px; background: rgba(255,255,255,.76); backdrop-filter: blur(6px); transform: translateX(-50%); }
-.hero-image-dots button { width: 8px; height: 8px; padding: 0; border: 1px solid var(--ink); border-radius: 50%; background: transparent; cursor: pointer; transition: width .25s, border-radius .25s, background .25s; }
-.hero-image-dots button.active { width: 24px; border-radius: 8px; background: var(--ink); }
+.hero-image-dots button { width: 8px; height: 8px; padding: 0; position: relative; border: 1px solid var(--ink); border-radius: 50%; overflow: hidden; background: transparent; cursor: pointer; transition: width .25s, border-radius .25s; }
+.hero-image-dots button.active { width: 30px; border-radius: 8px; }
+.hero-image-dots button.active::after { position: absolute; inset: 0; background: var(--ink); content: ""; transform: scaleX(0); transform-origin: left center; animation: hero-dot-progress 5.5s linear forwards; }
+
+@keyframes hero-dot-progress {
+  to { transform: scaleX(1); }
+}
 
 @media (prefers-reduced-motion: reduce) {
   .shop-hero-image { transition: none; transform: none; }
+  .hero-image-dots button.active::after { animation: none; transform: scaleX(1); }
 }
 
 .featured { background: linear-gradient(135deg, #f7f8f8, #f3f1ee); }

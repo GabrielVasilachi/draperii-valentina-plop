@@ -47,6 +47,11 @@ export function SiteFooter({ navigate }: { navigate: Navigate }) {
         </div>
         <span>© {new Date().getFullYear()} Valentina Plop · Toate drepturile rezervate</span>
       </div>
+      <div className="footer-credit">
+        <a href="https://gabrielvasilachi.com" target="_blank" rel="noreferrer">
+          Made with <span aria-hidden="true">♥</span> by <b>Gabi</b>
+        </a>
+      </div>
     </footer>
   );
 }

@@ -9,12 +9,12 @@ export function HomeHeroSection({ navigate }: { navigate: Navigate }) {
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reducedMotion) return;
 
-    const interval = window.setInterval(() => {
+    const timeout = window.setTimeout(() => {
       setActiveSlide((current) => (current + 1) % heroSlides.length);
     }, 5500);
 
-    return () => window.clearInterval(interval);
-  }, []);
+    return () => window.clearTimeout(timeout);
+  }, [activeSlide]);
 
   return (
     <section className="shop-hero">

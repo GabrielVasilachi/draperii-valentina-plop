@@ -104,6 +104,11 @@
 }
 .footer-nav { display: flex; gap: 18px; }
 .footer-nav button { font-size: 13px; text-transform: uppercase; }
+.footer-credit { margin-top: 18px; display: flex; justify-content: center; }
+.footer-credit a { color: #9a9691; font-size: 12px; letter-spacing: .04em; line-height: 1.4; text-decoration: none; transition: color .2s; }
+.footer-credit a:hover { color: var(--ink); }
+.footer-credit span { margin: 0 2px; color: #b76e79; font-size: 13px; }
+.footer-credit b { color: inherit; font-weight: 700; }
 
 .floating-call {
   width: 46px;
