@@ -23,7 +23,7 @@ export function SiteHeader({ path, navigate }: SiteHeaderProps) {
           <button
             key={to}
             onClick={() => go(to)}
-            className={path === to || (to === "/magazin" && path.startsWith(to)) ? "active" : ""}
+            className={path === to || (to === "/catalog" && path.startsWith(to)) ? "active" : ""}
           >
             {label}
           </button>
@@ -70,7 +70,11 @@ export function SiteHeader({ path, navigate }: SiteHeaderProps) {
 
       <nav className={menuOpen ? "mobile-nav open" : "mobile-nav"} aria-label="Navigare mobilă">
         {mainNavigation.map(([to, label]) => (
-          <button key={to} onClick={() => go(to)} className={path === to ? "active" : ""}>
+          <button
+            key={to}
+            onClick={() => go(to)}
+            className={path === to || (to === "/catalog" && path.startsWith(to)) ? "active" : ""}
+          >
             {label}<span aria-hidden="true">→</span>
           </button>
         ))}

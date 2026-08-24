@@ -14,7 +14,7 @@ export function FeaturedProductsSection({ navigate }: { navigate: Navigate }) {
           {/* <span className="eyebrow">Produsele noastre</span> */}
           <h2>Produsele noastre</h2>
           <p>Modele apreciate de clienții noștri.</p>
-          <button className="btn primary featured-cta" onClick={() => navigate("/magazin")}>
+          <button className="btn primary featured-cta" onClick={() => navigate("/catalog")}>
             Vezi toate produsele
           </button>
         </div>

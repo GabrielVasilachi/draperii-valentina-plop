@@ -9,7 +9,7 @@ export function CategoryShopSection({ navigate }: { navigate: Navigate }) {
           <span className="eyebrow">Categorii</span>
           <h2>Alege ce cauți</h2>
         </div>
-        <button className="btn primary" onClick={() => navigate("/magazin")}>
+        <button className="btn primary" onClick={() => navigate("/catalog")}>
           Vezi tot
         </button>
       </div>
@@ -18,7 +18,7 @@ export function CategoryShopSection({ navigate }: { navigate: Navigate }) {
           <button
             className="category-card"
             key={category.name}
-            onClick={() => navigate("/magazin")}
+            onClick={() => navigate("/catalog")}
           >
             <img src={category.image} alt="" />
             <span className="category-card-shade" />

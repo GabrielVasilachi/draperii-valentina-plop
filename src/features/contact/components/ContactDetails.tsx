@@ -1,3 +1,5 @@
+import { WorkingHours } from "../../../shared/components/WorkingHours";
+
 export function ContactDetails() {
   return (
     <div className="contact-info">
@@ -29,8 +31,8 @@ export function ContactDetails() {
         </a>
       </div>
       <div className="info-block">
-        <small>Programări</small>
-        <p>Sună înainte de vizită.</p>
+        <small>Program de lucru</small>
+        <WorkingHours />
       </div>
     </div>
   );

@@ -3,9 +3,9 @@ import { shopCategories } from "./navigation";
 
 export function CategoryNavigation({ navigate }: { navigate: Navigate }) {
   return (
-    <nav className="shop-nav" aria-label="Categorii magazin">
+    <nav className="shop-nav" aria-label="Categorii catalog">
       {shopCategories.map((label) => (
-        <button key={label} onClick={() => navigate("/magazin")}>
+        <button key={label} onClick={() => navigate("/catalog")}>
           {label}
         </button>
       ))}

@@ -1,7 +1,6 @@
 import { useMemo, useState } from "react";
 import { ProductCard } from "../products/components/ProductCard";
 import { categories, products } from "../products/data/products";
-import { PageHero } from "../../shared/components/PageHero";
 import type { Navigate } from "../../shared/types/navigation";
 import { CatalogPagination } from "./components/CatalogPagination";
 import { CatalogToolbar } from "./components/CatalogToolbar";
@@ -30,42 +29,59 @@ export function CatalogPage({
   const shown = filtered.slice(page === 1 ? 0 : 9, page === 1 ? 9 : 15);
   return (
     <>
-      <PageHero eyebrow="Magazin" title="Colecțiile noastre.">
-        Alege modelul potrivit. Fiecare produs este realizat la comandă.
-      </PageHero>
-      <section className="catalog section-pad">
-        <CatalogToolbar
-          category={category}
-          query={query}
-          onCategoryChange={setCategory}
-          onQueryChange={setQuery}
-        />
-        <div className="catalog-count">
-          <span>Afișăm {shown.length} din {filtered.length} produse</span>
-          <span>Realizate la comandă</span>
+      <header className="catalog-intro">
+        <div>
+          <span>Catalog online</span>
+          <p>Alege modelul potrivit pentru spațiul tău. Toate produsele sunt realizate la comandă.</p>
         </div>
-        {shown.length ? (
-          <div className="product-grid">
-            {shown.map((p) => (
-              <ProductCard key={p.id} product={p} navigate={navigate} />
-            ))}
+        <div className="catalog-intro-total">
+          <strong>{products.length}</strong>
+          <span>modele disponibile</span>
+        </div>
+      </header>
+
+      <section className="catalog">
+        <div className="catalog-layout">
+          <div className="catalog-results">
+            <div className="catalog-results-header">
+              <div>
+                <span className="catalog-results-label">Produse</span>
+                <h2>{category === "Toate" ? "Toate modelele" : category}</h2>
+              </div>
+              <span className="catalog-count">{filtered.length} rezultate</span>
+            </div>
+
+            {shown.length ? (
+              <div className="product-grid">
+                {shown.map((product) => (
+                  <ProductCard
+                    key={product.id}
+                    product={product}
+                    navigate={navigate}
+                    previewCarousel
+                  />
+                ))}
+              </div>
+            ) : (
+              <div className="empty">
+                <h3>Nu am găsit produse</h3>
+                <p>Încearcă un alt termen sau alege categoria „Toate”.</p>
+              </div>
+            )}
+
+            {category === "Toate" && !query && (
+              <CatalogPagination page={page} navigate={navigate} />
+            )}
           </div>
-        ) : (
-          <div className="empty">
-            <h3>Nu am găsit produse</h3>
-            <p>Încearcă un alt termen sau alege categoria „Toate”.</p>
-          </div>
-        )}
-        {category === "Toate" && !query && (
-          <CatalogPagination page={page} navigate={navigate} />
-        )}
-      </section>
-      <section className="catalog-note">
-        <span>Mostre disponibile în salon</span>
-        <h2>Descoperă materialele în lumină naturală.</h2>
-        <button className="btn cream" onClick={() => navigate("/contact")}>
-          Programul salonului
-        </button>
+
+          <CatalogToolbar
+            category={category}
+            query={query}
+            onCategoryChange={setCategory}
+            onQueryChange={setQuery}
+            onContact={() => navigate("/contact")}
+          />
+        </div>
       </section>
     </>
   );

@@ -1,8 +1,11 @@
 .site-header {
   height: 78px;
   padding: 0 clamp(22px, 4vw, 64px);
-  position: relative;
-  z-index: 40;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
@@ -11,6 +14,7 @@
   background: rgba(255, 255, 255, .97);
   backdrop-filter: blur(14px);
 }
+.site-main { padding-top: 78px; }
 
 .brand {
   padding: 0;
@@ -104,6 +108,9 @@
 .footer-logo > button { display: flex; align-items: center; gap: 10px; }
 .footer-logo b { font-size: 13px; letter-spacing: .15em; }
 .footer-logo p { margin: 10px 0 0 44px; color: var(--muted); font-size: 13px; }
+.footer-socials { margin: 20px 0 0 44px; }
+.footer .footer-socials a { width: 34px; height: 34px; color: var(--ink); line-height: 1; }
+.footer .footer-socials a:hover { color: white; }
 .footer h3 { margin: 0 0 16px; font-family: inherit; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; }
 .footer p, .footer a, .footer button { color: var(--muted); font-size: 13px; line-height: 1.8; text-decoration: none; }
 .footer-phone { display: block; margin-bottom: 7px; color: var(--ink) !important; font-size: 13px !important; }

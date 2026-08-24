@@ -145,6 +145,16 @@
   overflow: hidden;
 }
 
+.working-hours { max-width: 340px; margin: 10px 0 0; }
+.working-hours > div { padding: 7px 0; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 22px; }
+.working-hours dt, .working-hours dd { margin: 0; font-size: 13px; line-height: 1.45; }
+.working-hours dt { color: var(--muted); }
+.working-hours dd { color: var(--ink); font-weight: 700; }
+.working-hours > div:last-child dd { color: var(--brown); }
+.working-hours.compact { margin: 0 0 13px; }
+.working-hours.compact > div { padding: 3px 0; }
+.working-hours.compact dt, .working-hours.compact dd { font-size: 12px; }
+
 .gallery-backdrop {
   padding: 24px;
   position: fixed;

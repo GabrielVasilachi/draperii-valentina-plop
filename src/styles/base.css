@@ -41,7 +41,7 @@ h1, h2, h3 {
   font-weight: 600;
   letter-spacing: -0.025em;
 }
-#root { min-height: 100vh; overflow: hidden; }
+#root { min-height: 100vh; overflow-x: clip; }
 ::selection { background: var(--sand); color: white; }
 
 .section-pad, .shop-section {

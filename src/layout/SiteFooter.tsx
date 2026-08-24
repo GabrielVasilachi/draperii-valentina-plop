@@ -1,3 +1,5 @@
+import { SocialLinks } from "../shared/components/SocialLinks";
+import { WorkingHours } from "../shared/components/WorkingHours";
 import type { Navigate } from "../shared/types/navigation";
 import { mainNavigation } from "./navigation";
 
@@ -11,6 +13,7 @@ export function SiteFooter({ navigate }: { navigate: Navigate }) {
             <b>VALENTINA PLOP</b>
           </button>
           <p>Draperii & perdele</p>
+          <SocialLinks className="footer-socials" />
         </div>
         <div>
           <h3>Telefon</h3>
@@ -19,22 +22,21 @@ export function SiteFooter({ navigate }: { navigate: Navigate }) {
         </div>
         <div>
           <h3>Adresă</h3>
-          <p>
-            Str. Vasile Lupu 61/6
-            <br />
-            Chișinău, Moldova
-          </p>
           <a
             href="https://maps.app.goo.gl/11ReQiePUjVsZnUk8"
             target="_blank"
             rel="noreferrer"
           >
-            Vezi harta ↗
+            <p>
+              Str. Vasile Lupu 61/6
+            <br />
+              Chișinău, Moldova
+            </p>
           </a>
         </div>
         <div>
-          <h3>Vizite în salon</h3>
-          <p>Cu programare prealabilă</p>
+          <h3>Program de lucru</h3>
+          <WorkingHours compact />
           <button onClick={() => navigate("/contact")}>Programează o vizită</button>
         </div>
       </div>

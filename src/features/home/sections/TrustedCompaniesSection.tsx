@@ -39,8 +39,8 @@ export function TrustedCompaniesSection({ navigate }: { navigate: Navigate }) {
                   <b>{partner.name}</b>
                 </span>
                 <span className="partner-card-action">
-                  {partner.images.length > 0 ? "Vezi proiectul" : "În curând"}
-                  <i>↗</i>
+                  <span>Vezi proiectele</span>
+                  <i aria-hidden="true">↗</i>
                 </span>
               </span>
             </button>

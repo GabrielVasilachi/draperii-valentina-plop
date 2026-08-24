@@ -17,34 +17,46 @@ import "../styles/pages/content-pages.css";
 import "../styles/responsive.css";
 
 const normalizePath = (path: string) => path.replace(/\/+$/, "") || "/";
+const canonicalizePath = (path: string) =>
+  normalizePath(path).replace(/^\/magazin(?=\/|$)/, "/catalog");
 
 function App() {
   const [path, setPath] = useState(() =>
-    normalizePath(window.location.pathname),
+    canonicalizePath(window.location.pathname),
   );
 
   useEffect(() => {
-    const onPopState = () => setPath(normalizePath(window.location.pathname));
+    const currentPath = normalizePath(window.location.pathname);
+    const canonicalPath = canonicalizePath(currentPath);
+    if (canonicalPath !== currentPath) window.history.replaceState({}, "", canonicalPath);
+
+    const onPopState = () => {
+      const nextPath = canonicalizePath(window.location.pathname);
+      if (nextPath !== normalizePath(window.location.pathname)) {
+        window.history.replaceState({}, "", nextPath);
+      }
+      setPath(nextPath);
+    };
     window.addEventListener("popstate", onPopState);
     return () => window.removeEventListener("popstate", onPopState);
   }, []);
 
   const navigate = (to: string) => {
-    const next = normalizePath(to);
+    const next = canonicalizePath(to);
     if (next !== path) window.history.pushState({}, "", next);
     setPath(next);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const productSlug = path.startsWith("/magazin/") && !path.startsWith("/magazin/page/")
+  const productSlug = path.startsWith("/catalog/") && !path.startsWith("/catalog/page/")
     ? path.split("/")[2]
     : null;
   const selectedProduct = products.find((product) => product.slug === productSlug);
 
   let page = <HomePage navigate={navigate} />;
   if (selectedProduct)
-    page = <ProductDetailPage product={selectedProduct} navigate={navigate} />;
-  else if (path.startsWith("/magazin"))
+    page = <ProductDetailPage key={selectedProduct.id} product={selectedProduct} navigate={navigate} />;
+  else if (path.startsWith("/catalog"))
     page = <CatalogPage path={path} navigate={navigate} />;
   else if (path === "/galerie" || path === "/urmareste-ne") page = <GalleryPage navigate={navigate} />;
   else if (path === "/servicii") page = <ServicesPage navigate={navigate} />;

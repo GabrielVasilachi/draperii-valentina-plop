@@ -38,7 +38,7 @@ export function HomeHeroSection({ navigate }: { navigate: Navigate }) {
         <div className="hero-actions">
           <button
             className="btn primary light-button"
-            onClick={() => navigate("/magazin")}
+            onClick={() => navigate("/catalog")}
           >
             Descoperă colecția
           </button>

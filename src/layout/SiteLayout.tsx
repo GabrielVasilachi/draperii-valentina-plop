@@ -14,7 +14,7 @@ export function SiteLayout({ children, path, navigate }: SiteLayoutProps) {
   return (
     <>
       <SiteHeader path={path} navigate={navigate} />
-      <main>{children}</main>
+      <main className="site-main">{children}</main>
       <SiteFooter navigate={navigate} />
       <a
         className="floating-call"
