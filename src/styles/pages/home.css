@@ -125,14 +125,6 @@
 .social-cta > span { color: var(--sand); font-size: 13px; letter-spacing: .14em; text-transform: uppercase; }
 .social-cta h2 { margin: 10px 0 26px; font-size: clamp(38px, 5vw, 58px); text-transform: uppercase; }
 
-.reviews-page { background: #fbfaf8; }
-.reviews-page-score { width: fit-content; margin: 0 auto 42px; display: flex; align-items: center; gap: 16px; }
-.reviews-page-score strong { font-family: "Cormorant Garamond", Georgia, serif; font-size: 66px; line-height: .8; }
-.reviews-page-score div { display: flex; align-items: flex-start; flex-direction: column; }
-.reviews-page-score div > span { color: #c69553; font-size: 19px; letter-spacing: .08em; }
-.reviews-page-score small { margin-top: 3px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
-.reviews-page-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-
 .gallery-is-open { overflow: hidden; }
 .partner-gallery-backdrop { padding: 28px; position: fixed; inset: 0; z-index: 110; display: grid; place-items: center; background: rgba(25,22,19,.88); backdrop-filter: blur(6px); }
 .partner-gallery-modal { width: min(1120px, 100%); max-height: 92vh; position: relative; display: grid; grid-template-columns: 1.45fr .75fr; overflow: hidden; background: white; }

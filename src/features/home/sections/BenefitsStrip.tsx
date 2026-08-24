@@ -1,7 +1,6 @@
-import type { Navigate } from "../../../shared/types/navigation";
-import { reviews } from "../../reviews/data/reviews";
+import { googleMapsUrl, reviews } from "../data/reviews";
 
-export function GoogleReviewsSection({ navigate }: { navigate: Navigate }) {
+export function GoogleReviewsSection() {
   return (
     <section className="google-reviews section-pad" aria-labelledby="google-reviews-title">
       <div className="reviews-heading">
@@ -32,9 +31,9 @@ export function GoogleReviewsSection({ navigate }: { navigate: Navigate }) {
         ))}
       </div>
 
-      <button className="reviews-google-link" onClick={() => navigate("/recenzii")}>
+      <a className="reviews-google-link" href={googleMapsUrl} target="_blank" rel="noreferrer">
         Vezi toate recenziile <span aria-hidden="true">→</span>
-      </button>
+      </a>
     </section>
   );
 }
