@@ -9,8 +9,8 @@ export function CategoryShopSection({ navigate }: { navigate: Navigate }) {
           <span className="eyebrow">Categorii</span>
           <h2>Alege ce cauți</h2>
         </div>
-        <button className="text-arrow" onClick={() => navigate("/magazin")}>
-          Vezi tot <span>→</span>
+        <button className="btn primary" onClick={() => navigate("/magazin")}>
+          Vezi tot
         </button>
       </div>
       <div className="category-grid">

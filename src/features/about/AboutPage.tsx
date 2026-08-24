@@ -80,7 +80,7 @@ export function AboutPage({ navigate }: { navigate: Navigate }) {
           <h2>Te așteptăm în salon.</h2>
         </div>
         <button className="btn primary" onClick={() => navigate("/contact")}>
-          Vezi contactele →
+          Vezi contactele
         </button>
       </section>
     </>

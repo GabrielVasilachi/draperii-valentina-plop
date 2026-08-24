@@ -32,15 +32,15 @@ export function HomeHeroSection({ navigate }: { navigate: Navigate }) {
       </div>
       <div className="shop-hero-overlay" />
       <div className="shop-hero-content">
-        <span className="hero-kicker">Stofe de calitate</span>
-        <h1>Draperii & perdele</h1>
-        <p>Eleganță și stil pentru casa ta.</p>
+        <span className="hero-kicker">Textile create la comandă</span>
+        <h1>Ferestre cu personalitate</h1>
+        <p>Perdele și draperii realizate pe măsura spațiului tău.</p>
         <div className="hero-actions">
           <button
             className="btn primary light-button"
             onClick={() => navigate("/magazin")}
           >
-            Categorii de produse <span aria-hidden="true">→</span>
+            Descoperă colecția
           </button>
         </div>
       </div>
@@ -52,7 +52,9 @@ export function HomeHeroSection({ navigate }: { navigate: Navigate }) {
           <p><b>02</b> Măsurare</p>
           <p><b>03</b> Coasere și montare</p>
         </div>
-        <button onClick={() => navigate("/contact")}>Programează o vizită <span aria-hidden="true">→</span></button>
+        <button className="btn primary hero-summary-cta" onClick={() => navigate("/contact")}>
+          Programează o vizită
+        </button>
       </aside>
       <div className="hero-image-dots" aria-label="Imaginile principale">
         {heroSlides.map((slide, index) => (

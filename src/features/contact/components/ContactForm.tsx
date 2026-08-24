@@ -65,7 +65,7 @@ export function ContactForm() {
           />
         </label>
         <button className="btn primary" type="submit">
-          Trimite solicitarea →
+          Trimite solicitarea
         </button>
         <small>Te contactăm doar despre această solicitare.</small>
       </form>

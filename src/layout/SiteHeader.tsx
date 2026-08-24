@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { SocialLinks } from "../shared/components/SocialLinks";
 import type { Navigate } from "../shared/types/navigation";
 import { mainNavigation } from "./navigation";
 
@@ -52,6 +53,7 @@ export function SiteHeader({ path, navigate }: SiteHeaderProps) {
           </button>
         ))}
         <a className="header-phone" href="tel:+37369212709">+373 69 212 709</a>
+        <SocialLinks className="header-socials" />
       </div>
 
       <button
@@ -73,6 +75,7 @@ export function SiteHeader({ path, navigate }: SiteHeaderProps) {
           </button>
         ))}
         <a href="tel:+37369212709">+373 69 212 709</a>
+        <SocialLinks className="mobile-socials" />
       </nav>
     </header>
   );

@@ -1,37 +1,94 @@
-import { useState } from "react";
-import { PartnerGalleryModal } from "../home/components/PartnerGalleryModal";
-import { partnerProjects, type PartnerProject } from "../home/data/partners";
+import { useEffect, useState } from "react";
 import type { Navigate } from "../../shared/types/navigation";
+import { SocialLinks } from "../../shared/components/SocialLinks";
+
+const gallerySlots = [
+  { id: "01", size: "wide", src: "/images/gallery/Valentina_Plop_HD_01.png" },
+  { id: "02", size: "tall", src: "/images/gallery/Valentina_Plop_HD_02.png" },
+  { id: "03", size: "compact", src: "/images/gallery/Valentina_Plop_HD_03.png" },
+  { id: "04", size: "compact", src: "/images/gallery/Valentina_Plop_HD_04.png" },
+  { id: "05", size: "feature", src: "/images/gallery/Valentina_Plop_HD_05.png" },
+  { id: "06", size: "portrait", src: "/images/gallery/Valentina_Plop_HD_06.png" },
+  { id: "07", size: "square", src: "/images/gallery/Valentina_Plop_HD_07.png" },
+  { id: "08", size: "landscape", src: "/images/gallery/Valentina_Plop_HD_08.png" },
+  { id: "09", size: "panorama", src: "/images/gallery/Valentina_Plop_HD_09.png" },
+] as const;
 
 export function GalleryPage({ navigate }: { navigate: Navigate }) {
-  const [selected, setSelected] = useState<PartnerProject | null>(null);
-  const projects = partnerProjects.filter((partner) => partner.images.length > 0);
+  const [activeImage, setActiveImage] = useState<number | null>(null);
+
+  const closeGallery = () => setActiveImage(null);
+  const showPrevious = () => {
+    setActiveImage((current) => current === null ? null : (current - 1 + gallerySlots.length) % gallerySlots.length);
+  };
+  const showNext = () => {
+    setActiveImage((current) => current === null ? null : (current + 1) % gallerySlots.length);
+  };
+
+  useEffect(() => {
+    if (activeImage === null) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") closeGallery();
+      if (event.key === "ArrowLeft") showPrevious();
+      if (event.key === "ArrowRight") showNext();
+    };
+
+    document.body.classList.add("gallery-is-open");
+    window.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      document.body.classList.remove("gallery-is-open");
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [activeImage]);
 
   return (
     <>
-      <section className="social-hero">
-        <span className="eyebrow">Proiecte finalizate</span>
-        <h1>Galerie</h1>
-        <p>Lucrări reale, realizate de atelierul nostru.</p>
+      <section className="gallery-showcase section-pad" aria-label="Galerie de proiecte">
+        <aside className="gallery-social-invite">
+          <div>
+            <span className="eyebrow">Din culisele atelierului</span>
+            <h3>Urmărește-ne pentru proiecte noi.</h3>
+          </div>
+          <SocialLinks className="gallery-social-links" showLabels />
+        </aside>
+
+        <div className="gallery-mosaic" aria-label="Fotografiile proiectelor">
+          {gallerySlots.map((slot, index) => (
+            <button
+              className={`gallery-slot gallery-slot--${slot.size}`}
+              key={slot.id}
+              type="button"
+              onClick={() => setActiveImage(index)}
+              aria-label={`Mărește imaginea ${slot.id}`}
+            >
+              <img src={slot.src} alt={`Proiect Draperii Valentina Plop — imaginea ${slot.id}`} loading="lazy" />
+              <span className="gallery-slot-number">{slot.id}</span>
+            </button>
+          ))}
+        </div>
       </section>
-      <section className="project-gallery section-pad" aria-label="Galeria proiectelor">
-        {projects.map((partner) => (
-          <button key={partner.id} className="project-tile" onClick={() => setSelected(partner)}>
-            <img src={partner.images[0].src} alt={partner.images[0].alt} />
-            <span>
-              <small>{partner.type}</small>
-              <b>{partner.name}</b>
-              <i aria-hidden="true">Vezi proiectul →</i>
-            </span>
-          </button>
-        ))}
+
+      <section className="gallery-cta">
+        <span className="eyebrow">Următorul proiect poate fi al tău</span>
+        <h2>Construim atmosfera<br />în jurul ferestrei.</h2>
+        <button className="btn primary" onClick={() => navigate("/contact")}>Cere o ofertă</button>
       </section>
-      <section className="social-cta">
-        <span>Lucrări realizate cu grijă</span>
-        <h2>Inspiră-te din proiectele noastre.</h2>
-        <button className="btn primary" onClick={() => navigate("/contact")}>Cere o ofertă →</button>
-      </section>
-      {selected && <PartnerGalleryModal partner={selected} navigate={navigate} onClose={() => setSelected(null)} />}
+
+      {activeImage !== null && (
+        <div className="portfolio-lightbox" role="presentation" onMouseDown={(event) => {
+          if (event.target === event.currentTarget) closeGallery();
+        }}>
+          <div className="portfolio-lightbox-dialog" role="dialog" aria-modal="true" aria-label={`Imaginea ${gallerySlots[activeImage].id} din galerie`}>
+            <button className="portfolio-lightbox-close" type="button" onClick={closeGallery} aria-label="Închide imaginea">×</button>
+            <button className="portfolio-lightbox-arrow previous" type="button" onClick={showPrevious} aria-label="Imaginea precedentă">←</button>
+            <img src={gallerySlots[activeImage].src} alt={`Proiect Draperii Valentina Plop — imaginea ${gallerySlots[activeImage].id}`} />
+            <button className="portfolio-lightbox-arrow next" type="button" onClick={showNext} aria-label="Imaginea următoare">→</button>
+            <span className="portfolio-lightbox-count">{gallerySlots[activeImage].id} / {String(gallerySlots.length).padStart(2, "0")}</span>
+          </div>
+        </div>
+      )}
     </>
   );
 }

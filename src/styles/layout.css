@@ -38,7 +38,8 @@
 .brand small { display: block; margin-top: 3px; color: var(--muted); font-size: 13px; letter-spacing: .12em; }
 
 .desktop-nav { display: flex; align-items: center; gap: clamp(15px, 2vw, 28px); }
-.desktop-nav.nav-right { justify-content: flex-end; }
+.desktop-nav.nav-left { justify-content: flex-end; }
+.desktop-nav.nav-right { justify-content: flex-start; }
 .desktop-nav button, .footer button {
   padding: 8px 0;
   border: 0;
@@ -70,6 +71,22 @@
   text-decoration: none;
   white-space: nowrap;
 }
+.social-links { display: flex; align-items: center; gap: 7px; }
+.social-links a {
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  color: var(--ink);
+  transition: border-color .2s, background .2s, color .2s;
+}
+.social-links a:hover { border-color: var(--sand); background: var(--sand); color: white; }
+.social-links svg { width: 15px; height: 15px; display: block; fill: currentColor; }
+.social-links svg rect, .social-links svg circle { fill: none; stroke: currentColor; stroke-width: 1.8; }
+.social-links svg .social-icon-dot { fill: currentColor; stroke: none; }
 .menu-toggle, .mobile-phone, .mobile-nav { display: none; }
 
 .footer {

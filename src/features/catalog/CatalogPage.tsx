@@ -64,7 +64,7 @@ export function CatalogPage({
         <span>Mostre disponibile în salon</span>
         <h2>Descoperă materialele în lumină naturală.</h2>
         <button className="btn cream" onClick={() => navigate("/contact")}>
-          Programul salonului →
+          Programul salonului
         </button>
       </section>
     </>

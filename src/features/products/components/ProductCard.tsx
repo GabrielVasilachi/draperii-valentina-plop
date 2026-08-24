@@ -20,19 +20,20 @@ export function ProductCard({ product, navigate }: ProductCardProps) {
             <img src={product.images[0]} alt={product.name} loading="lazy" />
           </button>
 
-          <button className="quick-view" onClick={openProduct}>
-            Vezi produsul
-          </button>
+          <span className="quick-view" aria-hidden="true">
+            Citește mai mult
+          </span>
         </div>
 
         <div className="product-meta">
           <h3>{product.name}</h3>
           <div className="product-buy-row">
             <button
+              className="btn primary product-card-cta"
               onClick={openProduct}
               aria-label={`Vezi detaliile pentru ${product.name}`}
             >
-              Citește mai mult →
+              Citește mai mult
             </button>
           </div>
         </div>

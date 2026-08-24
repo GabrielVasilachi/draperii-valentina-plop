@@ -156,7 +156,7 @@ export function PartnerGalleryModal({
             type="button"
             onClick={requestSimilarProject}
           >
-            Contact și program <span>→</span>
+            Contact și program
           </button>
         </aside>
       </section>

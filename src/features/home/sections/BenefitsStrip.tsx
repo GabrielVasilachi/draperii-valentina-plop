@@ -6,7 +6,7 @@ export function GoogleReviewsSection() {
       <div className="reviews-heading">
         <div>
           <span className="eyebrow">Părerea clienților</span>
-          <h2 id="google-reviews-title">Recenzii reale</h2>
+          <h2 id="google-reviews-title">Recenzii</h2>
         </div>
         <div className="reviews-score" aria-label="Evaluare 4,9 din 5 pe Google">
           <strong>4,9</strong>
@@ -31,8 +31,8 @@ export function GoogleReviewsSection() {
         ))}
       </div>
 
-      <a className="reviews-google-link" href={googleMapsUrl} target="_blank" rel="noreferrer">
-        Vezi toate recenziile <span aria-hidden="true">→</span>
+      <a className="btn primary reviews-google-link" href={googleMapsUrl} target="_blank" rel="noreferrer">
+        Vezi toate recenziile
       </a>
     </section>
   );

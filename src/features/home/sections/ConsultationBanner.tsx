@@ -8,7 +8,7 @@ export function ConsultationBanner({ navigate }: { navigate: Navigate }) {
         <h2>Venim, măsurăm și găsim soluția potrivită.</h2>
       </div>
       <button className="btn cream" onClick={() => navigate("/contact")}>
-        Programează măsurarea <span aria-hidden="true">→</span>
+        Programează măsurarea
       </button>
     </section>
   );

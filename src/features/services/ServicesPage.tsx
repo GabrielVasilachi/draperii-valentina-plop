@@ -27,7 +27,7 @@ export function ServicesPage({ navigate }: { navigate: Navigate }) {
           <h2>Consultanță, măsurări și montaj.</h2>
         </div>
         <button className="btn primary" onClick={() => navigate("/contact")}>
-          Contact și program →
+          Contact și program
         </button>
       </section>
     </>

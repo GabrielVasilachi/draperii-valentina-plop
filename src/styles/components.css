@@ -141,30 +141,6 @@
   letter-spacing: -0.025em;
 }
 
-.product-buy-row {
-  padding-top: 12px;
-  border-top: 1px solid var(--line);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.product-buy-row span {
-  color: var(--muted);
-  font-size: 13px;
-}
-
-.product-buy-row button {
-  padding: 4px 0;
-  border: 0;
-  border-bottom: 1px solid var(--ink);
-  background: transparent;
-  cursor: pointer;
-  font-size: 13px;
-  font-weight: 600;
-}
-
 .gallery-is-open {
   overflow: hidden;
 }

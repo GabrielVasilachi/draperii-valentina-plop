@@ -30,7 +30,7 @@ export function ProductDetailPage({ product, navigate }: { product: Product; nav
             <span>✓ Consultanță personalizată</span>
             <span>✓ Măsurare și montare</span>
           </div>
-          <button className="btn primary" onClick={() => navigate("/contact")}>Solicită o ofertă →</button>
+          <button className="btn primary" onClick={() => navigate("/contact")}>Solicită o ofertă</button>
           <a href="tel:+37369212709">sau sună la +373 69 212 709</a>
         </div>
       </section>
