@@ -1,6 +1,5 @@
 import { useState } from "react";
 import type { Navigate } from "../shared/types/navigation";
-import { PhoneIcon } from "../shared/components/PhoneIcon";
 import { mainNavigation } from "./navigation";
 
 type SiteHeaderProps = {
@@ -18,51 +17,63 @@ export function SiteHeader({ path, navigate }: SiteHeaderProps) {
 
   return (
     <header className="site-header">
-      <button
-        className="brand"
-        onClick={() => go("/")}
-        aria-label="Draperii Valentina Plop — Acasă"
-      >
-        <span className="brand-mark">VP</span>
-        <span>
-          <b>Valentina Plop</b>
-          <small>ATELIER DE TEXTILE</small>
-        </span>
-      </button>
-
-      <button
-        className="menu-toggle"
-        aria-label="Deschide meniul"
-        aria-expanded={menuOpen}
-        onClick={() => setMenuOpen(!menuOpen)}
-      >
-        {menuOpen ? "Închide" : "Meniu"}
-      </button>
-
-      <nav
-        className={menuOpen ? "main-nav open" : "main-nav"}
-        aria-label="Navigare principală"
-      >
-        {mainNavigation.map(([to, label]) => (
+      <nav className="desktop-nav nav-left" aria-label="Navigare principală">
+        {mainNavigation.slice(0, 3).map(([to, label]) => (
           <button
             key={to}
             onClick={() => go(to)}
-            className={
-              path === to || (to === "/magazin" && path.startsWith(to))
-                ? "active"
-                : ""
-            }
+            className={path === to || (to === "/magazin" && path.startsWith(to)) ? "active" : ""}
           >
             {label}
           </button>
         ))}
       </nav>
 
-      <div className="header-actions">
-        <a href="tel:+37369212709" aria-label="Sună atelierul">
-          <PhoneIcon />
-        </a>
+      <button
+        className="brand"
+        onClick={() => go("/")}
+        aria-label="Draperii Valentina Plop — Acasă"
+      >
+        <span className="brand-mark" aria-hidden="true">V</span>
+        <span>
+          <b>VALENTINA PLOP</b>
+          <small>DRAPERII & PERDELE</small>
+        </span>
+      </button>
+
+      <div className="desktop-nav nav-right">
+        {mainNavigation.slice(3).map(([to, label]) => (
+          <button
+            key={to}
+            onClick={() => go(to)}
+            className={path === to ? "active" : ""}
+          >
+            {label}
+          </button>
+        ))}
+        <a className="header-phone" href="tel:+37369212709">+373 69 212 709</a>
       </div>
+
+      <button
+        className={menuOpen ? "menu-toggle open" : "menu-toggle"}
+        aria-label={menuOpen ? "Închide meniul" : "Deschide meniul"}
+        aria-expanded={menuOpen}
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        <span />
+        <span />
+      </button>
+
+      <a className="mobile-phone" href="tel:+37369212709" aria-label="Sună atelierul">Sună</a>
+
+      <nav className={menuOpen ? "mobile-nav open" : "mobile-nav"} aria-label="Navigare mobilă">
+        {mainNavigation.map(([to, label]) => (
+          <button key={to} onClick={() => go(to)} className={path === to ? "active" : ""}>
+            {label}<span aria-hidden="true">→</span>
+          </button>
+        ))}
+        <a href="tel:+37369212709">+373 69 212 709</a>
+      </nav>
     </header>
   );
 }

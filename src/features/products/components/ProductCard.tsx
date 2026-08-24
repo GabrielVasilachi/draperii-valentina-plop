@@ -1,7 +1,5 @@
-import { useState } from "react";
 import type { Navigate } from "../../../shared/types/navigation";
 import type { Product } from "../data/products";
-import { ProductGalleryModal } from "./ProductGalleryModal";
 
 type ProductCardProps = {
   product: Product;
@@ -9,63 +7,35 @@ type ProductCardProps = {
 };
 
 export function ProductCard({ product, navigate }: ProductCardProps) {
-  const [galleryOpen, setGalleryOpen] = useState(false);
-  const [favorite, setFavorite] = useState(false);
+  const openProduct = () => navigate(`/magazin/${product.slug}`);
 
   return (
-    <>
       <article className="product-card">
         <div className="product-image-wrap">
           <button
             className="product-image"
-            onClick={() => setGalleryOpen(true)}
+            onClick={openProduct}
             aria-label={`Deschide galeria pentru ${product.name}`}
           >
             <img src={product.images[0]} alt={product.name} loading="lazy" />
           </button>
 
-          {product.featured && <span className="featured-badge">Popular</span>}
-
-          <button
-            className={favorite ? "favorite active" : "favorite"}
-            onClick={() => setFavorite(!favorite)}
-            aria-label={
-              favorite ? "Elimină din favorite" : "Adaugă la favorite"
-            }
-            aria-pressed={favorite}
-          >
-            {favorite ? "♥" : "♡"}
-          </button>
-
-          <button className="quick-view" onClick={() => setGalleryOpen(true)}>
-            Privire rapidă
+          <button className="quick-view" onClick={openProduct}>
+            Vezi produsul
           </button>
         </div>
 
         <div className="product-meta">
-          <small>
-            {product.category} · {product.subcategory}
-          </small>
           <h3>{product.name}</h3>
           <div className="product-buy-row">
-            <span>La comandă</span>
             <button
-              onClick={() => setGalleryOpen(true)}
+              onClick={openProduct}
               aria-label={`Vezi detaliile pentru ${product.name}`}
             >
-              Vezi detalii →
+              Citește mai mult →
             </button>
           </div>
         </div>
       </article>
-
-      {galleryOpen && (
-        <ProductGalleryModal
-          product={product}
-          navigate={navigate}
-          onClose={() => setGalleryOpen(false)}
-        />
-      )}
-    </>
   );
 }

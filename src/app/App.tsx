@@ -3,7 +3,10 @@ import { AboutPage } from "../features/about/AboutPage";
 import { CatalogPage } from "../features/catalog/CatalogPage";
 import { ContactPage } from "../features/contact/ContactPage";
 import { HomePage } from "../features/home/HomePage";
+import { FollowUsPage } from "../features/social/FollowUsPage";
 import { ServicesPage } from "../features/services/ServicesPage";
+import { ProductDetailPage } from "../features/products/ProductDetailPage";
+import { products } from "../features/products/data/products";
 import { SiteLayout } from "../layout/SiteLayout";
 import "../styles/base.css";
 import "../styles/layout.css";
@@ -33,9 +36,17 @@ function App() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const productSlug = path.startsWith("/magazin/") && !path.startsWith("/magazin/page/")
+    ? path.split("/")[2]
+    : null;
+  const selectedProduct = products.find((product) => product.slug === productSlug);
+
   let page = <HomePage navigate={navigate} />;
-  if (path.startsWith("/magazin"))
+  if (selectedProduct)
+    page = <ProductDetailPage product={selectedProduct} navigate={navigate} />;
+  else if (path.startsWith("/magazin"))
     page = <CatalogPage path={path} navigate={navigate} />;
+  else if (path === "/urmareste-ne") page = <FollowUsPage navigate={navigate} />;
   else if (path === "/servicii") page = <ServicesPage navigate={navigate} />;
   else if (path === "/despre-noi") page = <AboutPage navigate={navigate} />;
   else if (path === "/contact") page = <ContactPage />;

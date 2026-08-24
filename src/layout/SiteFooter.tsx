@@ -4,29 +4,25 @@ import { mainNavigation } from "./navigation";
 export function SiteFooter({ navigate }: { navigate: Navigate }) {
   return (
     <footer className="footer">
-      <div className="footer-brand">
-        <span className="brand-mark footer-mark">VP</span>
-        <div>
-          <b>Valentina Plop</b>
-          <p>Textile făcute cu grijă în Chișinău.</p>
-        </div>
-      </div>
-
       <div className="footer-links">
-        <div>
-          <h3>Magazin</h3>
-          {mainNavigation.slice(1, 4).map(([to, label]) => (
-            <button key={to} onClick={() => navigate(to)}>
-              {label}
-            </button>
-          ))}
+        <div className="footer-logo">
+          <button onClick={() => navigate("/")} aria-label="Acasă">
+            <span className="brand-mark footer-mark">V</span>
+            <b>VALENTINA PLOP</b>
+          </button>
+          <p>Draperii & perdele</p>
         </div>
         <div>
-          <h3>Salon</h3>
+          <h3>Telefon</h3>
+          <a className="footer-phone" href="tel:+37369212709">+373 69 212 709</a>
+          <button onClick={() => navigate("/contact")}>Scrie-ne un mesaj</button>
+        </div>
+        <div>
+          <h3>Adresă</h3>
           <p>
             Str. Vasile Lupu 61/6
             <br />
-            Chișinău
+            Chișinău, Moldova
           </p>
           <a
             href="https://maps.app.goo.gl/11ReQiePUjVsZnUk8"
@@ -37,19 +33,19 @@ export function SiteFooter({ navigate }: { navigate: Navigate }) {
           </a>
         </div>
         <div>
-          <h3>Contact</h3>
-          <a className="footer-phone" href="tel:+37369212709">
-            +373 69 212 709
-          </a>
-          <button onClick={() => navigate("/contact")}>
-            Program și contact →
-          </button>
+          <h3>Vizite în salon</h3>
+          <p>Cu programare prealabilă</p>
+          <button onClick={() => navigate("/contact")}>Programează o vizită</button>
         </div>
       </div>
 
       <div className="footer-bottom">
-        <span>© {new Date().getFullYear()} Valentina Plop</span>
-        <span>Creat cu drag în Moldova</span>
+        <div className="footer-nav">
+          {mainNavigation.map(([to, label]) => (
+            <button key={to} onClick={() => navigate(to)}>{label}</button>
+          ))}
+        </div>
+        <span>© {new Date().getFullYear()} Valentina Plop · Toate drepturile rezervate</span>
       </div>
     </footer>
   );

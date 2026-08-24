@@ -12,13 +12,9 @@ export function TrustedCompaniesSection({ navigate }: { navigate: Navigate }) {
     <>
       <section className="trusted-by" aria-labelledby="trusted-companies-title">
         <div className="trusted-by-copy">
-          <span>Colaborări selectate</span>
-          <h2 id="trusted-companies-title">
-            Proiecte în spații cunoscute.
-          </h2>
-          <p>
-            Selectează un partener pentru a deschide galeria proiectului.
-          </p>
+          <span>Au ales atelierul nostru</span>
+          <h2 id="trusted-companies-title">Companii cu care am lucrat</h2>
+          <p>Selectează un logo pentru a vedea proiectul.</p>
         </div>
 
         <div className="company-row" aria-label="Proiecte pentru parteneri">
@@ -43,11 +39,7 @@ export function TrustedCompaniesSection({ navigate }: { navigate: Navigate }) {
                   <b>{partner.name}</b>
                 </span>
                 <span className="partner-card-action">
-                  {partner.images.length > 0
-                    ? `Vezi ${partner.images.length} ${
-                        partner.images.length === 1 ? "imagine" : "imagini"
-                      }`
-                    : "Galerie în pregătire"}
+                  {partner.images.length > 0 ? "Vezi proiectul" : "În curând"}
                   <i>↗</i>
                 </span>
               </span>

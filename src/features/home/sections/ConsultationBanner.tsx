@@ -4,11 +4,11 @@ export function ConsultationBanner({ navigate }: { navigate: Navigate }) {
   return (
     <section className="consultation-banner">
       <div>
-        <span className="eyebrow light">Ai o fereastră în minte?</span>
-        <h2>Hai să alegem împreună.</h2>
+        <span className="eyebrow light">Ai nevoie de ajutor?</span>
+        <h2>Venim, măsurăm și găsim soluția potrivită.</h2>
       </div>
       <button className="btn cream" onClick={() => navigate("/contact")}>
-        Programează o vizită
+        Programează măsurarea <span aria-hidden="true">→</span>
       </button>
     </section>
   );

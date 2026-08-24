@@ -30,8 +30,8 @@ export function CatalogPage({
   const shown = filtered.slice(page === 1 ? 0 : 9, page === 1 ? 9 : 15);
   return (
     <>
-      <PageHero eyebrow="Magazin" title="Colecții pentru casa ta.">
-        Alege modelul. Noi îl adaptăm ferestrei tale.
+      <PageHero eyebrow="Magazin" title="Colecțiile noastre.">
+        Alege modelul potrivit. Fiecare produs este realizat la comandă.
       </PageHero>
       <section className="catalog section-pad">
         <CatalogToolbar
@@ -41,8 +41,8 @@ export function CatalogPage({
           onQueryChange={setQuery}
         />
         <div className="catalog-count">
-          <span>{filtered.length} produse</span>
-          <span>La comandă · Măsurări disponibile</span>
+          <span>Afișăm {shown.length} din {filtered.length} produse</span>
+          <span>Realizate la comandă</span>
         </div>
         {shown.length ? (
           <div className="product-grid">

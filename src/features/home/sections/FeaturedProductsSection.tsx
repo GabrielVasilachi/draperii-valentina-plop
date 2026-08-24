@@ -11,14 +11,15 @@ export function FeaturedProductsSection({ navigate }: { navigate: Navigate }) {
     <section className="featured shop-section">
       <div className="compact-heading">
         <div>
-          <span className="eyebrow">Alese de clienții noștri</span>
-          <h2>Cele mai iubite</h2>
+          <span className="eyebrow">Produsele noastre</span>
+          <h2>Cele mai alese</h2>
+          <p>Modele apreciate de clienții noștri.</p>
         </div>
         <button className="text-arrow" onClick={() => navigate("/magazin")}>
-          Vezi colecția <span>→</span>
+          Toate produsele <span>→</span>
         </button>
       </div>
-      <div className="product-grid four">
+      <div className="product-grid">
         {featuredProducts.map((product) => (
           <ProductCard key={product.id} product={product} navigate={navigate} />
         ))}

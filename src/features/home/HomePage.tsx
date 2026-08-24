@@ -1,8 +1,8 @@
 import type { Navigate } from "../../shared/types/navigation";
-import { AtelierStorySection } from "./sections/AtelierStorySection";
-import { BenefitsStrip } from "./sections/BenefitsStrip";
-import { CategoryShopSection } from "./sections/CategoryShopSection";
+import { GoogleReviewsSection } from "./sections/BenefitsStrip";
+import { EditorialTrustSection } from "./sections/EditorialTrustSection";
 import { FeaturedProductsSection } from "./sections/FeaturedProductsSection";
+import { HomeContactSection } from "./sections/HomeContactSection";
 import { HomeHeroSection } from "./sections/HomeHeroSection";
 import { TrustedCompaniesSection } from "./sections/TrustedCompaniesSection";
 
@@ -11,10 +11,10 @@ export function HomePage({ navigate }: { navigate: Navigate }) {
     <>
       <HomeHeroSection navigate={navigate} />
       <TrustedCompaniesSection navigate={navigate} />
-      <BenefitsStrip />
-      <CategoryShopSection navigate={navigate} />
       <FeaturedProductsSection navigate={navigate} />
-      <AtelierStorySection navigate={navigate} />
+      <EditorialTrustSection navigate={navigate} />
+      <GoogleReviewsSection />
+      <HomeContactSection />
     </>
   );
 }

@@ -6,11 +6,11 @@ export function CategoryShopSection({ navigate }: { navigate: Navigate }) {
     <section className="category-shop section-pad">
       <div className="compact-heading">
         <div>
-          <span className="eyebrow">Cumpără după categorie</span>
-          <h2>Ce cauți pentru casa ta?</h2>
+          <span className="eyebrow">Categorii</span>
+          <h2>Alege ce cauți</h2>
         </div>
         <button className="text-arrow" onClick={() => navigate("/magazin")}>
-          Toate produsele <span>→</span>
+          Vezi tot <span>→</span>
         </button>
       </div>
       <div className="category-grid">
@@ -23,9 +23,8 @@ export function CategoryShopSection({ navigate }: { navigate: Navigate }) {
             <img src={category.image} alt="" />
             <span className="category-card-shade" />
             <span className="category-card-copy">
-              <small>{category.note}</small>
               <b>{category.name}</b>
-              <i>Descoperă →</i>
+              <i aria-hidden="true">→</i>
             </span>
           </button>
         ))}

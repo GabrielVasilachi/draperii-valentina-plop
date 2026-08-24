@@ -5,17 +5,8 @@ import { heroSlides } from "../data/homeContent";
 export function HomeHeroSection({ navigate }: { navigate: Navigate }) {
   const [activeSlide, setActiveSlide] = useState(0);
 
-  const changeSlide = (direction: number) => {
-    setActiveSlide(
-      (current) =>
-        (current + direction + heroSlides.length) % heroSlides.length,
-    );
-  };
-
   useEffect(() => {
-    const reducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reducedMotion) return;
 
     const interval = window.setInterval(() => {
@@ -27,79 +18,52 @@ export function HomeHeroSection({ navigate }: { navigate: Navigate }) {
 
   return (
     <section className="shop-hero">
-      <div className="shop-hero-slides" aria-live="polite">
+      <div className="shop-hero-slides">
         {heroSlides.map((slide, index) => (
           <img
-            className={
-              activeSlide === index
-                ? "shop-hero-image active"
-                : "shop-hero-image"
-            }
+            className={activeSlide === index ? "shop-hero-image active" : "shop-hero-image"}
             src={slide.image}
-            alt={activeSlide === index ? slide.alt : ""}
+            alt={index === 0 ? slide.alt : ""}
+            aria-hidden={activeSlide !== index}
+            loading={index === 0 ? "eager" : "lazy"}
             key={slide.image}
           />
         ))}
       </div>
       <div className="shop-hero-overlay" />
       <div className="shop-hero-content">
-        <span className="hero-kicker">{heroSlides[activeSlide].label}</span>
-        <h1>
-          Textile care fac casa
-          <br />
-          să se simtă <em>acasă.</em>
-        </h1>
-        <p>Perdele și draperii făcute pentru spațiul tău.</p>
+        <span className="hero-kicker">Stofe de calitate</span>
+        <h1>Draperii & perdele</h1>
+        <p>Eleganță și stil pentru casa ta.</p>
         <div className="hero-actions">
           <button
             className="btn primary light-button"
             onClick={() => navigate("/magazin")}
           >
-            Vezi colecțiile
-          </button>
-          <button
-            className="hero-text-link"
-            onClick={() => navigate("/servicii")}
-          >
-            Cum lucrăm <span>↗</span>
+            Categorii de produse <span aria-hidden="true">→</span>
           </button>
         </div>
       </div>
-      {/* <div className="hero-service-card">
-        <span>De la idee la montaj</span>
-        <div>
-          <b>01</b> Alegem
+      <aside className="hero-service-summary" aria-label="Serviciile atelierului">
+        <span>Servicii complete</span>
+        <h2>De la alegere la montaj.</h2>
+        <div className="hero-service-list">
+          <p><b>01</b> Consultanță</p>
+          <p><b>02</b> Măsurare</p>
+          <p><b>03</b> Coasere și montare</p>
         </div>
-        <div>
-          <b>02</b> Măsurăm
-        </div>
-        <div>
-          <b>03</b> Montăm
-        </div>
-      </div> */}
-      <div className="hero-slider-controls" aria-label="Galerie principală">
-        <button
-          onClick={() => changeSlide(-1)}
-          aria-label="Imaginea precedentă"
-        >
-          ←
-        </button>
-        <div className="hero-slider-dots">
-          {heroSlides.map((slide, index) => (
-            <button
-              className={activeSlide === index ? "active" : ""}
-              onClick={() => setActiveSlide(index)}
-              aria-label={`Afișează: ${slide.label}`}
-              key={slide.image}
-            />
-          ))}
-        </div>
-        <span>
-          0{activeSlide + 1} / 0{heroSlides.length}
-        </span>
-        <button onClick={() => changeSlide(1)} aria-label="Imaginea următoare">
-          →
-        </button>
+        <button onClick={() => navigate("/contact")}>Programează o vizită <span aria-hidden="true">→</span></button>
+      </aside>
+      <div className="hero-image-dots" aria-label="Imaginile principale">
+        {heroSlides.map((slide, index) => (
+          <button
+            className={activeSlide === index ? "active" : ""}
+            onClick={() => setActiveSlide(index)}
+            aria-label={`Afișează imaginea ${index + 1}: ${slide.alt}`}
+            aria-current={activeSlide === index ? "true" : undefined}
+            key={slide.image}
+          />
+        ))}
       </div>
     </section>
   );
