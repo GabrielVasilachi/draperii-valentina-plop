@@ -37,7 +37,6 @@ export function SiteFooter({ navigate }: { navigate: Navigate }) {
         <div>
           <h3>Program de lucru</h3>
           <WorkingHours compact />
-          <button onClick={() => navigate("/contact")}>Programează o vizită</button>
         </div>
       </div>
 

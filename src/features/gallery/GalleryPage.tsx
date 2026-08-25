@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import type { Navigate } from "../../shared/types/navigation";
 import { SocialLinks } from "../../shared/components/SocialLinks";
 
@@ -16,6 +16,16 @@ const gallerySlots = [
 
 export function GalleryPage({ navigate }: { navigate: Navigate }) {
   const [activeImage, setActiveImage] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(() =>
+    window.matchMedia("(max-width: 520px)").matches,
+  );
+  const [isAutoPlaying, setIsAutoPlaying] = useState(() =>
+    !window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+  );
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const dragStartXRef = useRef(0);
+  const hasDraggedRef = useRef(false);
+  const isPointerDownRef = useRef(false);
 
   const closeGallery = () => setActiveImage(null);
   const showPrevious = () => {
@@ -24,6 +34,95 @@ export function GalleryPage({ navigate }: { navigate: Navigate }) {
   const showNext = () => {
     setActiveImage((current) => current === null ? null : (current + 1) % gallerySlots.length);
   };
+
+  const keepCarouselInfinite = useCallback(() => {
+    const carousel = carouselRef.current;
+    if (!carousel) return;
+
+    const setWidth = carousel.scrollWidth / 3;
+    if (!setWidth) return;
+
+    if (carousel.scrollLeft >= setWidth * 2) {
+      carousel.scrollLeft -= setWidth;
+    } else if (carousel.scrollLeft <= 1) {
+      carousel.scrollLeft += setWidth;
+    }
+  }, []);
+
+  const openCarouselImage = (index: number) => {
+    if (hasDraggedRef.current) {
+      hasDraggedRef.current = false;
+      return;
+    }
+
+    setActiveImage(index);
+  };
+
+  useEffect(() => {
+    const mobileQuery = window.matchMedia("(max-width: 520px)");
+    const updateMobileState = () => setIsMobile(mobileQuery.matches);
+
+    updateMobileState();
+    mobileQuery.addEventListener("change", updateMobileState);
+    return () => mobileQuery.removeEventListener("change", updateMobileState);
+  }, []);
+
+  useEffect(() => {
+    const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const respectReducedMotion = () => {
+      if (reducedMotionQuery.matches) setIsAutoPlaying(false);
+    };
+
+    respectReducedMotion();
+    reducedMotionQuery.addEventListener("change", respectReducedMotion);
+    return () => reducedMotionQuery.removeEventListener("change", respectReducedMotion);
+  }, []);
+
+  useEffect(() => {
+    if (!isMobile) return;
+
+    const carousel = carouselRef.current;
+    if (!carousel) return;
+
+    const moveToMiddleSet = () => {
+      const setWidth = carousel.scrollWidth / 3;
+      if (setWidth) carousel.scrollLeft = setWidth;
+    };
+
+    const frame = window.requestAnimationFrame(moveToMiddleSet);
+    const resizeObserver = new ResizeObserver(moveToMiddleSet);
+    resizeObserver.observe(carousel);
+
+    return () => {
+      window.cancelAnimationFrame(frame);
+      resizeObserver.disconnect();
+    };
+  }, [isMobile]);
+
+  useEffect(() => {
+    if (!isMobile || !isAutoPlaying) return;
+
+    const carousel = carouselRef.current;
+    if (!carousel) return;
+
+    let previousTime = performance.now();
+    let animationFrame = 0;
+
+    const moveCarousel = (currentTime: number) => {
+      const elapsed = Math.min(currentTime - previousTime, 64);
+      previousTime = currentTime;
+
+      if (document.visibilityState === "visible") {
+        carousel.scrollLeft += elapsed * 0.022;
+        keepCarouselInfinite();
+      }
+
+      animationFrame = window.requestAnimationFrame(moveCarousel);
+    };
+
+    animationFrame = window.requestAnimationFrame(moveCarousel);
+    return () => window.cancelAnimationFrame(animationFrame);
+  }, [isAutoPlaying, isMobile, keepCarouselInfinite]);
 
   useEffect(() => {
     if (activeImage === null) return;
@@ -54,20 +153,93 @@ export function GalleryPage({ navigate }: { navigate: Navigate }) {
           <SocialLinks className="gallery-social-links" showLabels />
         </aside>
 
-        <div className="gallery-mosaic" aria-label="Fotografiile proiectelor">
-          {gallerySlots.map((slot, index) => (
-            <button
-              className={`gallery-slot gallery-slot--${slot.size}`}
-              key={slot.id}
-              type="button"
-              onClick={() => setActiveImage(index)}
-              aria-label={`Mărește imaginea ${slot.id}`}
+        {!isMobile && (
+          <div className="gallery-mosaic" aria-label="Fotografiile proiectelor">
+            {gallerySlots.map((slot, index) => (
+              <button
+                className={`gallery-slot gallery-slot--${slot.size}`}
+                key={slot.id}
+                type="button"
+                onClick={() => setActiveImage(index)}
+                aria-label={`Mărește imaginea ${slot.id}`}
+              >
+                <img src={slot.src} alt={`Proiect Draperii Valentina Plop — imaginea ${slot.id}`} loading="lazy" />
+                <span className="gallery-slot-number">{slot.id}</span>
+              </button>
+            ))}
+          </div>
+        )}
+
+        {isMobile && (
+          <div className="gallery-mobile-shell">
+            <div
+              ref={carouselRef}
+              className={`gallery-mobile-carousel ${isAutoPlaying ? "is-auto" : "is-paused"}`}
+              aria-label="Galerie foto cu derulare orizontală"
+              tabIndex={0}
+              onScroll={keepCarouselInfinite}
+              onPointerDown={(event) => {
+                isPointerDownRef.current = true;
+                dragStartXRef.current = event.clientX;
+                hasDraggedRef.current = false;
+              }}
+              onPointerMove={(event) => {
+                if (
+                  isPointerDownRef.current &&
+                  Math.abs(event.clientX - dragStartXRef.current) > 6
+                ) {
+                  hasDraggedRef.current = true;
+                  setIsAutoPlaying(false);
+                }
+              }}
+              onPointerUp={() => {
+                isPointerDownRef.current = false;
+              }}
+              onPointerCancel={() => {
+                isPointerDownRef.current = false;
+              }}
+              onTouchMove={() => setIsAutoPlaying(false)}
+              onWheel={() => setIsAutoPlaying(false)}
+              onKeyDownCapture={(event) => {
+                if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+                  setIsAutoPlaying(false);
+                }
+              }}
             >
-              <img src={slot.src} alt={`Proiect Draperii Valentina Plop — imaginea ${slot.id}`} loading="lazy" />
-              <span className="gallery-slot-number">{slot.id}</span>
-            </button>
-          ))}
-        </div>
+              <div className="gallery-mobile-track">
+                {[0, 1, 2].map((setIndex) => (
+                  <div
+                    className="gallery-mobile-track-set"
+                    aria-hidden={setIndex === 1 ? undefined : "true"}
+                    key={setIndex}
+                  >
+                    {gallerySlots.map((slot, slideIndex) => {
+                      const isAccessibleSlide = setIndex === 1;
+
+                      return (
+                        <button
+                          className={`gallery-mobile-slide gallery-mobile-slide--${slot.size}`}
+                          key={`${setIndex}-${slot.id}`}
+                          type="button"
+                          tabIndex={isAccessibleSlide ? 0 : -1}
+                          onClick={() => openCarouselImage(slideIndex)}
+                          aria-label={`Mărește imaginea ${slot.id}`}
+                        >
+                          <img
+                            src={slot.src}
+                            alt={isAccessibleSlide ? `Proiect Draperii Valentina Plop — imaginea ${slot.id}` : ""}
+                            loading={setIndex === 1 ? "eager" : "lazy"}
+                          />
+                          <span className="gallery-mobile-slide-number">{slot.id}</span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
       </section>
 
       <section className="gallery-cta">

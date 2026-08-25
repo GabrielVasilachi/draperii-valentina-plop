@@ -37,10 +37,12 @@ export function TrustedCompaniesSection({ navigate }: { navigate: Navigate }) {
                 <span>
                   <small>{partner.type}</small>
                   <b>{partner.name}</b>
+                  <span className="partner-card-mobile-action" aria-hidden="true">
+                    Vezi galeria
+                  </span>
                 </span>
                 <span className="partner-card-action">
                   <span>Vezi proiectele</span>
-                  <i aria-hidden="true">↗</i>
                 </span>
               </span>
             </button>
