@@ -99,6 +99,9 @@ export function ProductCard({ product, navigate, previewCarousel = false }: Prod
         </div>
 
         <div className="product-meta">
+          {previewCarousel && (
+            <small className="product-card-category">{product.category}</small>
+          )}
           <h3>{product.name}</h3>
           <div className="product-buy-row">
             <button
@@ -110,7 +113,7 @@ export function ProductCard({ product, navigate, previewCarousel = false }: Prod
               }}
               aria-label={`Vezi detaliile pentru ${product.name}`}
             >
-              Citește mai mult
+              {previewCarousel ? "Vezi produsul" : "Citește mai mult"}
             </button>
           </div>
         </div>
