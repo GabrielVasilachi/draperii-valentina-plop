@@ -22,7 +22,7 @@ export const partnerProjects: readonly PartnerProject[] = [
       "Perdele și draperii realizate pentru interioarele elegante ale Grand Elysée, cu textile adaptate ferestrelor ample și atmosferei rafinate a locației.",
     logo: "/images/partners/logos/grand-elysee.png",
     logoTone: "dark",
-    images: Array.from({ length: 8 }, (_, index) => ({
+    images: Array.from({ length: 11 }, (_, index) => ({
       src: `/images/partners/grand-elysee/${String(index + 1).padStart(2, "0")}.jpg`,
       alt: `Amenajare cu perdele și draperii la Grand Elysée — fotografia ${index + 1}`,
     })),
