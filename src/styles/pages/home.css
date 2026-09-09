@@ -74,6 +74,9 @@
 .partner-card.white .partner-card-logo, .partner-gallery-logo.white { background: white; }
 .partner-card { min-width: 0; min-height: 154px; padding: 0; border: 1px solid var(--line); display: grid; grid-template-rows: 96px 1fr; overflow: hidden; background: white; cursor: pointer; text-align: left; transition: transform .25s, box-shadow .25s; }
 .partner-card:hover { transform: translateY(-4px); box-shadow: var(--soft-shadow); }
+.partner-card.no-gallery { cursor: default; }
+.partner-card.no-gallery:hover { transform: none; box-shadow: none; }
+.partner-card.no-gallery:hover .partner-card-copy b { opacity: 1; transform: none; }
 .partner-card-logo { padding: 14px; display: grid; place-items: center; overflow: hidden; background: #f7f5f2; }
 .partner-card.dark .partner-card-logo, .partner-card.charcoal .partner-card-logo { background: #222; }
 .partner-card.forest .partner-card-logo { background: #20382f; }
