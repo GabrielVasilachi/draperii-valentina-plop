@@ -110,19 +110,16 @@ export function PartnerGalleryModal({
             </>
           ) : (
             <div className="partner-gallery-empty">
-              <span>Galerie foto</span>
-              <h3>Imaginile proiectului vor fi adăugate în curând.</h3>
-              <p>
-                Secțiunea este deja pregătită pentru fotografiile acestei
-                colaborări.
-              </p>
+              <span>Au ales atelierul nostru</span>
+              <h3>{partner.name}</h3>
+              <p>Fotografiile acestei colaborări nu sunt disponibile momentan.</p>
             </div>
           )}
         </div>
 
         <aside className="partner-gallery-info">
           <div className={`partner-gallery-logo ${partner.logoTone}`}>
-            <img src={partner.logo} alt={`Logo ${partner.name}`} />
+            {partner.logo ? <img src={partner.logo} alt={partner.logoAlt ?? `Logo ${partner.name}`} /> : <span className="partner-nameplate">{partner.name}</span>}
           </div>
 
           <span className="partner-gallery-kicker">

@@ -1,0 +1,110 @@
+[
+  {
+    "index": 1,
+    "source": "/Users/gabrielvasilachi/VS_Code_Projects/Valentina Plop Info companii si imagini colaboratoare/Companii deja existente pe site/Casa Nuntii Vicotia 1.jpg",
+    "generated": "/Users/gabrielvasilachi/.codex/generated_images/01a08648-fd4d-77d2-9a6f-a75c48dd8968/exec-fefc6a02-c61b-408c-a40d-a778e097809a.png",
+    "destination": "public/images/partners/casa-victoria/01-restored.jpg"
+  },
+  {
+    "index": 2,
+    "source": "/Users/gabrielvasilachi/VS_Code_Projects/Valentina Plop Info companii si imagini colaboratoare/Companii deja existente pe site/Casa Nuntii Vicotia 2.jpg",
+    "generated": "/Users/gabrielvasilachi/.codex/generated_images/01a08648-fd4d-77d2-9a6f-a75c48dd8968/exec-118bb737-1d86-42d0-9a45-3434331a085c.png",
+    "destination": "public/images/partners/casa-victoria/02-restored.jpg"
+  },
+  {
+    "index": 3,
+    "source": "/Users/gabrielvasilachi/VS_Code_Projects/Valentina Plop Info companii si imagini colaboratoare/Companii deja existente pe site/Crown Palace 1.jpg",
+    "generated": "/Users/gabrielvasilachi/.codex/generated_images/01a08648-fd4d-77d2-9a6f-a75c48dd8968/exec-a06afeee-282b-4dc9-b54c-e94d02e6716c.png",
+    "destination": "public/images/partners/crown-palace/01-restored.jpg"
+  },
+  {
+    "index": 4,
+    "source": "/Users/gabrielvasilachi/VS_Code_Projects/Valentina Plop Info companii si imagini colaboratoare/Companii deja existente pe site/Crown Palace 2.jpg",
+    "generated": "/Users/gabrielvasilachi/.codex/generated_images/01a08648-fd4d-77d2-9a6f-a75c48dd8968/exec-2efb7cd6-fbcc-4b8c-8162-112abb49aa93.png",
+    "destination": "public/images/partners/crown-palace/02-restored.jpg"
+  },
+  {
+    "index": 5,
+    "source": "/Users/gabrielvasilachi/VS_Code_Projects/Valentina Plop Info companii si imagini colaboratoare/Companii deja existente pe site/Imagine de la Institutul Național de Administrație si Management Public.jpg",
+    "generated": "/Users/gabrielvasilachi/.codex/generated_images/01a08648-fd4d-77d2-9a6f-a75c48dd8968/exec-1026b6e1-a021-410c-9362-20a8decd7037.png",
+    "destination": "public/images/partners/inamp/01-restored.jpg"
+  },
+  {
+    "index": 6,
+    "source": "/Users/gabrielvasilachi/VS_Code_Projects/Valentina Plop Info companii si imagini colaboratoare/Copanii noi/(de modificat imaginea ca sa nu fie acel fumator in ea) GREEN Park Bar&Terase 2.jpg",
+    "generated": "/Users/gabrielvasilachi/.codex/generated_images/01a08648-fd4d-77d2-9a6f-a75c48dd8968/exec-5a20317b-0350-48d3-a0f9-81951dc496df.png",
+    "destination": "public/images/partners/green-park/02-restored.jpg"
+  },
+  {
+    "index": 7,
+    "source": "/Users/gabrielvasilachi/VS_Code_Projects/Valentina Plop Info companii si imagini colaboratoare/Copanii noi/Clinica_Sante.jpg",
+    "generated": "/Users/gabrielvasilachi/.codex/generated_images/01a08648-fd4d-77d2-9a6f-a75c48dd8968/exec-e1e4e920-2601-483d-9577-ef615fd2f7dd.png",
+    "destination": "public/images/partners/clinica-sante/01-restored.jpg"
+  },
+  {
+    "index": 8,
+    "source": "/Users/gabrielvasilachi/VS_Code_Projects/Valentina Plop Info companii si imagini colaboratoare/Copanii noi/GREEN Park Bar&Terase 1.jpg",
+    "generated": "/Users/gabrielvasilachi/.codex/generated_images/01a08648-fd4d-77d2-9a6f-a75c48dd8968/exec-246eb765-4012-407f-a1b8-9899c4f095d3.png",
+    "destination": "public/images/partners/green-park/01-restored.jpg"
+  },
+  {
+    "index": 9,
+    "source": "/Users/gabrielvasilachi/VS_Code_Projects/Valentina Plop Info companii si imagini colaboratoare/Copanii noi/GREEN Park Bar&Terase 3.jpg",
+    "generated": "/Users/gabrielvasilachi/.codex/generated_images/01a08648-fd4d-77d2-9a6f-a75c48dd8968/exec-ed41cb61-a443-44f8-a5fb-ba95152ab94e.png",
+    "destination": "public/images/partners/green-park/03-restored.jpg"
+  },
+  {
+    "index": 10,
+    "source": "/Users/gabrielvasilachi/VS_Code_Projects/Valentina Plop Info companii si imagini colaboratoare/Copanii noi/GREEN Park Bar&Terase 4.jpg",
+    "generated": "/Users/gabrielvasilachi/.codex/generated_images/01a08648-fd4d-77d2-9a6f-a75c48dd8968/exec-3c2f68e1-7d2e-48f0-84a3-7613481e3c8f.png",
+    "destination": "public/images/partners/green-park/04-restored.jpg"
+  },
+  {
+    "index": 11,
+    "source": "/Users/gabrielvasilachi/VS_Code_Projects/Valentina Plop Info companii si imagini colaboratoare/Copanii noi/Restaurant \"Casa Sarbatorii\" or.Stefan-Voda 1.png",
+    "generated": "/Users/gabrielvasilachi/.codex/generated_images/01a08648-fd4d-77d2-9a6f-a75c48dd8968/exec-75ccdef0-8e8e-4ca2-b0ae-ba7e14f608e3.png",
+    "destination": "public/images/partners/casa-sarbatorii/01-restored.jpg"
+  },
+  {
+    "index": 12,
+    "source": "/Users/gabrielvasilachi/VS_Code_Projects/Valentina Plop Info companii si imagini colaboratoare/Copanii noi/Restaurant \"Casa Sarbatorii\" or.Stefan-Voda 2.png",
+    "generated": "/Users/gabrielvasilachi/.codex/generated_images/01a08648-fd4d-77d2-9a6f-a75c48dd8968/exec-01b06cc7-e1e4-418f-b6fe-23e63e228df7.png",
+    "destination": "public/images/partners/casa-sarbatorii/02-restored.jpg"
+  },
+  {
+    "index": 13,
+    "source": "/Users/gabrielvasilachi/VS_Code_Projects/Valentina Plop Info companii si imagini colaboratoare/Copanii noi/Restaurant \"Casa Sarbatorii\" or.Stefan-Voda 3.png",
+    "generated": "/Users/gabrielvasilachi/.codex/generated_images/01a08648-fd4d-77d2-9a6f-a75c48dd8968/exec-948cdb20-86bc-44b0-b74c-31bfca08926e.png",
+    "destination": "public/images/partners/casa-sarbatorii/03-restored.jpg"
+  },
+  {
+    "index": 14,
+    "source": "/Users/gabrielvasilachi/VS_Code_Projects/Valentina Plop Info companii si imagini colaboratoare/Copanii noi/Restaurant Paradis în Franța la Paris 1.jpg",
+    "generated": "/Users/gabrielvasilachi/.codex/generated_images/01a08648-fd4d-77d2-9a6f-a75c48dd8968/exec-f5ca1267-ffb7-49c0-8a9b-2a036b56ac9a.png",
+    "destination": "public/images/partners/paradis/01-restored.jpg"
+  },
+  {
+    "index": 15,
+    "source": "/Users/gabrielvasilachi/VS_Code_Projects/Valentina Plop Info companii si imagini colaboratoare/Copanii noi/Restaurant Paradis în Franța la Paris 2.jpg",
+    "generated": "/Users/gabrielvasilachi/.codex/generated_images/01a08648-fd4d-77d2-9a6f-a75c48dd8968/exec-db0c2965-e3dc-4398-96ab-89ab2c991fea.png",
+    "destination": "public/images/partners/paradis/02-restored.jpg"
+  },
+  {
+    "index": 16,
+    "source": "/Users/gabrielvasilachi/VS_Code_Projects/Valentina Plop Info companii si imagini colaboratoare/Copanii noi/Restaurant Paradis în Franța la Paris 3.jpg",
+    "generated": "/Users/gabrielvasilachi/.codex/generated_images/01a08648-fd4d-77d2-9a6f-a75c48dd8968/exec-bcacdd7f-c7d2-4321-965f-90c28701d902.png",
+    "destination": "public/images/partners/paradis/03-restored.jpg"
+  },
+  {
+    "index": 17,
+    "source": "/Users/gabrielvasilachi/VS_Code_Projects/Valentina Plop Info companii si imagini colaboratoare/Copanii noi/Restaurant Paradis în Franța la Paris 4.jpg",
+    "generated": "/Users/gabrielvasilachi/.codex/generated_images/01a08648-fd4d-77d2-9a6f-a75c48dd8968/exec-bde95287-ec8c-42a0-97db-66d9beb3dfcd.png",
+    "destination": "public/images/partners/paradis/04-restored.jpg"
+  },
+  {
+    "index": 18,
+    "source": "/Users/gabrielvasilachi/VS_Code_Projects/Valentina Plop Info companii si imagini colaboratoare/imagine_pentru_galerie_1.jpg",
+    "generated": "/Users/gabrielvasilachi/.codex/generated_images/01a08648-fd4d-77d2-9a6f-a75c48dd8968/exec-959779c1-1b1d-4d76-9c45-3e7b7ed0ad40.png",
+    "destination": "public/images/gallery/montaj-atelier-restored.jpg"
+  }
+]

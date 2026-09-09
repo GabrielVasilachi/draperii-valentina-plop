@@ -1,0 +1,75 @@
+{
+  "checkedOn": "2026-09-09",
+  "logos": [
+    {
+      "id": "clinica-sante",
+      "page": "https://sante.md/",
+      "asset": "https://sante.md/wp-content/uploads/2020/08/logo_color.svg"
+    },
+    {
+      "id": "nicolae-sulac",
+      "page": "https://ltnicolaesulac.md/",
+      "asset": "https://ltnicolaesulac.md/wp-content/uploads/2026/05/lt-pa-ns.png"
+    },
+    {
+      "id": "casa-sarbatorii",
+      "page": "https://complexmarion.md/restaurant/",
+      "asset": "https://complexmarion.md/wp-content/uploads/2023/03/marion_logo_t160.png",
+      "note": "Restaurant belongs to Complex Marion; use parent complex logo with explicit alt text."
+    },
+    {
+      "id": "paradis",
+      "page": "https://le-paradis-restaurant.fr/",
+      "asset": "https://le-paradis-restaurant.fr/uploads/media/images/cms/medias/0ac307a799fa0aebcbdfa9f3a84f8c7e.webp",
+      "userReference": "https://share.google/zQO9Um4Zium2t2Ic5"
+    },
+    {
+      "id": "iefs",
+      "page": "https://iefs.usm.md/",
+      "asset": "https://iefs.usm.md/wp-content/uploads/2023/03/logo.jpg",
+      "note": "USEFS emblem as published on institution site; current name IEFS within USM."
+    },
+    {
+      "id": "green-park",
+      "page": "https://www.facebook.com/greenpterrace/",
+      "asset": null,
+      "note": "Official public profile uses a terrace photograph, not a logo. Display plain company name until a verified logo is supplied."
+    },
+    {
+      "id": "dacia-balti",
+      "page": "https://beltsy.info/ro/recomandari/",
+      "userReference": "https://share.google/o9Y9DA2aQthr6ubr4",
+      "asset": null,
+      "note": "Confirmed restaurant on I. Franco street. Search found facade signage, not a usable verified standalone logo. Display plain company name; do not use Dacia car brand logo."
+    }
+  ],
+  "certificate": {
+    "source": "Certificat_licenta.jpg",
+    "destination": "public/images/about/certificat-textile-2020.jpg",
+    "treatment": "Unmodified copy. Document date 2020-06-30 and scope retained; no assertion of current certification or atelier certification."
+  },
+  "videos": [
+    {
+      "source": "video_pentru_galerie_1.mp4",
+      "destination": "public/videos/gallery/atelier-1.mp4",
+      "treatment": "Unmodified; controls, playsInline, preload metadata; no autoplay."
+    },
+    {
+      "source": "video_pentru_galerie_2.mp4",
+      "destination": "public/videos/gallery/atelier-2.mp4",
+      "treatment": "Unmodified; controls, playsInline, preload metadata; no autoplay."
+    },
+    {
+      "source": "video_pentru_galerie_3.mp4",
+      "destination": "public/videos/gallery/atelier-3.mp4",
+      "treatment": "Unmodified; controls, playsInline, preload metadata; no autoplay."
+    }
+  ],
+  "restoration": {
+    "tool": "Built-in image_gen",
+    "basePrompt": "Use case: precise-object-edit. Edit the supplied photo for the Valentina Plop real project portfolio. Faithfully restore and upscale to a clear high resolution photograph. Reduce compression and noise, gently improve sharpness and exposure so curtain folds and fabric are readable. Remove any superimposed old Draperii Valentina Plop logo/watermark, seamlessly restoring the covered background. Preserve exact room, framing, perspective, furniture, people, curtain designs, colors and proportions. Do not redesign, invent decor, add text, logos or objects. Natural photographic texture, no stylization or excessive HDR.",
+    "screenshots": "Extract ONLY original terrace photo; remove phone and social UI, black bars and captions. Preserve original photo aspect ratio and scene.",
+    "greenPark02": "User explicitly approved removal of seated smoking person, smoke and hookah. Restore chair, railing and trees naturally.",
+    "export": "JPEG quality 85 via sips; generated PNG originals retained."
+  }
+}

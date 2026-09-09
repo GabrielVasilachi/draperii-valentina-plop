@@ -79,6 +79,18 @@ export function AboutPage({ navigate }: { navigate: Navigate }) {
           </span>
         </div>
       </section>
+      <section className="textile-document section-pad" aria-labelledby="textile-document-title">
+        <a href="/images/about/certificat-textile-2020.jpg" target="_blank" rel="noreferrer" aria-label="Deschide copia certificatului textil din 2020">
+          <img src="/images/about/certificat-textile-2020.jpg" alt="Copie certificat OEKO-TEX STANDARD 100, SHGO 064180, datată 30 iunie 2020" loading="lazy" />
+        </a>
+        <div>
+          <span className="eyebrow">Materiale · Documentație</span>
+          <h2 id="textile-document-title">Certificat pentru textile</h2>
+          <p>Copie a certificatului OEKO-TEX STANDARD 100, nr. SHGO 064180, datată 30 iunie 2020, pentru articolele textile descrise în document.</p>
+          <p>Pentru informații despre certificarea materialului ales și documentația actuală, te așteptăm în salon.</p>
+          <a className="btn primary" href="/images/about/certificat-textile-2020.jpg" target="_blank" rel="noreferrer">Vezi documentul</a>
+        </div>
+      </section>
       <section className="cta-band">
         <div>
           <span className="eyebrow">Descoperă materialele</span>

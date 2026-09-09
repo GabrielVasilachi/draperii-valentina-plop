@@ -12,6 +12,7 @@ const gallerySlots = [
   { id: "07", size: "square", src: "/images/gallery/Valentina_Plop_HD_07.png" },
   { id: "08", size: "landscape", src: "/images/gallery/Valentina_Plop_HD_08.png" },
   { id: "09", size: "panorama", src: "/images/gallery/Valentina_Plop_HD_09.png" },
+  { id: "10", size: "portrait", src: "/images/gallery/montaj-atelier-restored.jpg" },
 ] as const;
 
 export function GalleryPage({ navigate }: { navigate: Navigate }) {
@@ -240,6 +241,22 @@ export function GalleryPage({ navigate }: { navigate: Navigate }) {
             </div>
           </div>
         )}
+      </section>
+
+      <section className="gallery-videos section-pad" aria-labelledby="gallery-videos-title">
+        <span className="eyebrow">Din timpul lucrărilor</span>
+        <h2 id="gallery-videos-title">Atelierul în mișcare</h2>
+        <div className="gallery-video-grid">
+          {[1, 2, 3].map((index) => (
+            <figure key={index}>
+              <video controls playsInline preload="metadata" aria-label={`Video din atelier — ${index}`}>
+                <source src={`/videos/gallery/atelier-${index}.mp4`} type="video/mp4" />
+                Browserul tău nu poate reda acest videoclip.
+              </video>
+              <figcaption>Din culisele atelierului · {String(index).padStart(2, "0")}</figcaption>
+            </figure>
+          ))}
+        </div>
       </section>
 
       <section className="gallery-cta">

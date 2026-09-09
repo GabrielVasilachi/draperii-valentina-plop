@@ -14,7 +14,7 @@ export function TrustedCompaniesSection({ navigate }: { navigate: Navigate }) {
         <div className="trusted-by-copy">
           <span>Au ales atelierul nostru</span>
           <h2 id="trusted-companies-title">Companii cu care am lucrat</h2>
-          <p>Selectează un logo pentru a vedea proiectul.</p>
+          <p>Restaurante, săli de evenimente și instituții. Descoperă colaborările noastre.</p>
         </div>
 
         <div className="company-row" aria-label="Proiecte pentru parteneri">
@@ -24,25 +24,25 @@ export function TrustedCompaniesSection({ navigate }: { navigate: Navigate }) {
               className={`partner-card ${partner.logoTone}`}
               type="button"
               onClick={() => setSelectedPartner(partner)}
-              aria-label={`Deschide galeria proiectului ${partner.name}`}
+              aria-label={`Descoperă colaborarea cu ${partner.name}`}
             >
               <span className="partner-card-logo">
-                <img
+                {partner.logo ? <img
                   src={partner.logo}
-                  alt={`Logo ${partner.name}`}
+                  alt={partner.logoAlt ?? `Logo ${partner.name}`}
                   loading="lazy"
-                />
+                /> : <span className="partner-nameplate">{partner.name}</span>}
               </span>
               <span className="partner-card-copy">
                 <span>
                   <small>{partner.type}</small>
                   <b>{partner.name}</b>
                   <span className="partner-card-mobile-action" aria-hidden="true">
-                    Vezi galeria
+                    {partner.images.length ? "Vezi galeria" : "Vezi colaborarea"}
                   </span>
                 </span>
                 <span className="partner-card-action">
-                  <span>Vezi proiectele</span>
+                  <span>{partner.images.length ? "Vezi proiectul" : "Vezi colaborarea"}</span>
                 </span>
               </span>
             </button>
