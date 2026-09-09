@@ -10,7 +10,7 @@ export function AtelierStorySection({ navigate }: { navigate: Navigate }) {
       <div className="atelier-story-copy">
         <span className="eyebrow light">Făcut cu suflet, aici</span>
         <h2>Nu vindem doar perdele. Îmbrăcăm povești.</h2>
-        <p>Tu alegi atmosfera. Noi avem grijă de fiecare cută.</p>
+        <p>De peste 25 de ani, avem grijă de fiecare cută. Zeci de mii de clienți ne-au ales pentru perdele și draperii la comandă.</p>
         <button className="btn cream" onClick={() => navigate("/despre-noi")}>
           Intră în atelier
         </button>

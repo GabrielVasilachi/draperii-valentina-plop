@@ -8,7 +8,7 @@ export function AboutPage({ navigate }: { navigate: Navigate }) {
         eyebrow="Despre atelier"
         title="Croit cu răbdare. Montat cu precizie."
       >
-        Atelier local. Textile la comandă. Grijă pentru fiecare detaliu.
+        Peste 25 de ani de experiență în perdele și draperii la comandă.
       </PageHero>
       <section className="about-story section-pad">
         <div className="about-collage">
@@ -24,6 +24,11 @@ export function AboutPage({ navigate }: { navigate: Navigate }) {
         <div>
           <span className="eyebrow">Filosofia noastră</span>
           <h2>Fiecare casă merită ceva făcut pentru ea.</h2>
+          <p>
+            De peste 25 de ani, Valentina Plop lucrează în domeniul perdelelor și
+            draperiilor. De-a lungul timpului, zeci de mii de clienți ne-au ales
+            pentru textile realizate la comandă.
+          </p>
           <p>
             Alegem, croim și montăm fiecare proiect în jurul luminii și stilului
             tău.

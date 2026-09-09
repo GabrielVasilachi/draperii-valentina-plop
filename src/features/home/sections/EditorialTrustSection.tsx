@@ -11,10 +11,10 @@ export function EditorialTrustSection({ navigate }: { navigate: Navigate }) {
         <button className="btn primary" onClick={() => navigate("/despre-noi")}>Despre noi</button>
       </div>
       <aside className="client-proof">
-        <strong>350+</strong>
-        <span>clienți mulțumiți</span>
-        <div aria-hidden="true">★★★★★</div>
-        <p>„Atenție la detalii, recomandări potrivite și montaj impecabil.”</p>
+        <strong>25+</strong>
+        <span>ani de experiență</span>
+        <div>Zeci de mii de clienți</div>
+        <p>Perdele și draperii la comandă, de la alegerea materialelor la montaj.</p>
       </aside>
     </section>
   );

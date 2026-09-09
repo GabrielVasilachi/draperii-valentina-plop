@@ -62,7 +62,7 @@
 .client-proof { width: 280px; padding: 30px; align-self: center; background: var(--sand); color: white; }
 .client-proof strong { display: block; font-family: "Cormorant Garamond", Georgia, serif; font-size: 58px; line-height: .9; }
 .client-proof > span { display: block; margin: 4px 0 18px; font-size: 13px; letter-spacing: .11em; text-transform: uppercase; }
-.client-proof > div { color: #ffe0a6; font-size: 13px; letter-spacing: .16em; }
+.client-proof > div { color: white; font-size: 14px; }
 .client-proof p { margin: 14px 0 0; font-family: "Cormorant Garamond", Georgia, serif; font-size: 18px; line-height: 1.35; }
 
 .trusted-by { padding: clamp(68px, 8vw, 110px) clamp(22px, 6vw, 92px); background: white; text-align: center; }

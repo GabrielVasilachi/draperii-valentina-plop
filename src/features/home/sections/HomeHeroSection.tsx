@@ -32,7 +32,7 @@ export function HomeHeroSection({ navigate }: { navigate: Navigate }) {
       </div>
       <div className="shop-hero-overlay" />
       <div className="shop-hero-content">
-        <span className="hero-kicker">Textile create la comandă</span>
+        <span className="hero-kicker">Peste 25 de ani de experiență</span>
         <h1>Ferestre cu personalitate</h1>
         <p>Perdele și draperii realizate pe măsura spațiului tău.</p>
         <div className="hero-actions">
