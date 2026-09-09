@@ -19,6 +19,15 @@ const socialLinks = [
       </svg>
     ),
   },
+  {
+    label: "TikTok",
+    href: "https://www.tiktok.com/@valentinaplop",
+    icon: (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M16.7 5.8A4.8 4.8 0 0 1 15.5 3h-3.1v12.4a2.7 2.7 0 1 1-2.3-2.7V9.5a5.9 5.9 0 1 0 5.4 5.9V9.1a8 8 0 0 0 4.7 1.5V7.5a4.8 4.8 0 0 1-3.5-1.7Z" />
+      </svg>
+    ),
+  },
 ] as const;
 
 type SocialLinksProps = {
@@ -30,7 +39,14 @@ export function SocialLinks({ className = "", showLabels = false }: SocialLinksP
   return (
     <div className={`social-links ${className}`.trim()} role="group" aria-label="Rețele sociale">
       {socialLinks.map(({ label, href, icon }) => (
-        <a key={label} href={href} target="_blank" rel="noreferrer" aria-label={label}>
+        <a
+          key={label}
+          className={`social-link-${label.toLowerCase()}`}
+          href={href}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={label}
+        >
           {icon}
           {showLabels && <span>{label}</span>}
         </a>

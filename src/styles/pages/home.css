@@ -159,8 +159,9 @@
 .gallery-social-invite h3 { max-width: 620px; margin: 10px 0 0; font-size: clamp(28px, 3vw, 42px); line-height: 1.05; }
 .gallery-social-links { gap: 10px; }
 .gallery-social-links a { width: auto; min-width: 146px; height: 48px; padding: 0 20px; border-color: rgba(48,50,50,.2); border-radius: 999px; display: flex; gap: 10px; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-decoration: none; text-transform: uppercase; }
-.gallery-social-links a:first-child:hover { border-color: #4267b2; background: #4267b2; }
-.gallery-social-links a:last-child:hover { border-color: #b44c91; background: #b44c91; }
+.gallery-social-links .social-link-facebook:hover { border-color: #4267b2; background: #4267b2; }
+.gallery-social-links .social-link-instagram:hover { border-color: #b44c91; background: #b44c91; }
+.gallery-social-links .social-link-tiktok:hover { border-color: #111; background: #111; }
 .gallery-social-links span { line-height: 1; }
 .gallery-cta { padding: clamp(80px, 10vw, 140px) 24px; background: white; text-align: center; }
 .gallery-cta h2 { margin: 14px 0 30px; font-size: clamp(46px, 6vw, 82px); line-height: .9; text-transform: uppercase; }

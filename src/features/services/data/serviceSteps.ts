@@ -11,7 +11,7 @@ export const serviceSteps: ServiceStep[] = [
     number: "01",
     title: "Consultanță",
     text: "Alegem textura, nuanța și sistemul potrivit.",
-    image: "/images/consultanta.jpg",
+    image: "/images/products/perdele-din-in/01.jpg",
     benefits: ["Materiale", "Culori", "Controlul luminii"],
   },
   {

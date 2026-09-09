@@ -5,7 +5,7 @@ export function AtelierStorySection({ navigate }: { navigate: Navigate }) {
     <section className="atelier-story">
       <div className="atelier-story-images">
         <img src="/images/coasere.jpg" alt="Lucru atent în atelier" />
-        <img src="/images/consultanta.jpg" alt="Alegerea materialelor" />
+        <img src="/images/montare.jpg" alt="Montarea perdelelor la client" />
       </div>
       <div className="atelier-story-copy">
         <span className="eyebrow light">Făcut cu suflet, aici</span>

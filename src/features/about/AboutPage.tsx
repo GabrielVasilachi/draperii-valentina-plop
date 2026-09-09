@@ -13,8 +13,8 @@ export function AboutPage({ navigate }: { navigate: Navigate }) {
       <section className="about-story section-pad">
         <div className="about-collage">
           <img
-            src="/images/consultanta.jpg"
-            alt="Alegerea materialelor în salon"
+            src="/images/montare.jpg"
+            alt="Montarea perdelelor la client"
           />
           <img
             src="/images/coasere.jpg"
