@@ -16,6 +16,7 @@ export function PartnerGalleryModal({
   const [activeImage, setActiveImage] = useState(0);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const hasImages = partner.images.length > 0;
+  const activeMedia = partner.images[activeImage];
 
   const changeImage = useCallback(
     (direction: number) => {
@@ -31,6 +32,7 @@ export function PartnerGalleryModal({
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") onClose();
+      if (event.target instanceof HTMLVideoElement) return;
       if (event.key === "ArrowLeft") changeImage(-1);
       if (event.key === "ArrowRight") changeImage(1);
     };
@@ -77,10 +79,19 @@ export function PartnerGalleryModal({
         <div className="partner-gallery-visual">
           {hasImages ? (
             <>
-              <img
-                src={partner.images[activeImage].src}
-                alt={partner.images[activeImage].alt}
-              />
+              {activeMedia.type === "video" ? (
+                <video
+                  key={activeMedia.src}
+                  src={activeMedia.src}
+                  poster={activeMedia.poster}
+                  controls
+                  playsInline
+                  preload="metadata"
+                  aria-label={activeMedia.alt}
+                />
+              ) : (
+                <img src={activeMedia.src} alt={activeMedia.alt} />
+              )}
 
               {partner.images.length > 1 && (
                 <>
@@ -88,7 +99,7 @@ export function PartnerGalleryModal({
                     className="partner-gallery-arrow previous"
                     type="button"
                     onClick={() => changeImage(-1)}
-                    aria-label="Imaginea precedentă"
+                    aria-label="Fișierul precedent"
                   >
                     ←
                   </button>
@@ -96,14 +107,14 @@ export function PartnerGalleryModal({
                     className="partner-gallery-arrow next"
                     type="button"
                     onClick={() => changeImage(1)}
-                    aria-label="Imaginea următoare"
+                    aria-label="Fișierul următor"
                   >
                     →
                   </button>
                 </>
               )}
 
-              <span className="partner-gallery-counter">
+              <span className={`partner-gallery-counter${activeMedia.type === "video" ? " for-video" : ""}`}>
                 {String(activeImage + 1).padStart(2, "0")} /{" "}
                 {String(partner.images.length).padStart(2, "0")}
               </span>
@@ -139,10 +150,13 @@ export function PartnerGalleryModal({
                   className={activeImage === index ? "active" : ""}
                   type="button"
                   onClick={() => setActiveImage(index)}
-                  aria-label={`Afișează imaginea ${index + 1}`}
+                  aria-label={`Afișează ${image.type === "video" ? "videoclipul" : "imaginea"} ${index + 1}`}
                   aria-pressed={activeImage === index}
                 >
-                  <img src={image.src} alt="" />
+                  <img src={image.type === "video" ? image.poster : image.src} alt="" />
+                  {image.type === "video" && (
+                    <span className="partner-gallery-video-label" aria-hidden="true">▶ Video</span>
+                  )}
                 </button>
               ))}
             </div>

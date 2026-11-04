@@ -1,6 +1,8 @@
 export type PartnerImage = {
   src: string;
   alt: string;
+  type?: "image" | "video";
+  poster?: string;
 };
 
 export type PartnerProject = {
@@ -15,6 +17,27 @@ export type PartnerProject = {
 };
 
 export const partnerProjects: readonly PartnerProject[] = [
+  {
+    id: "saperavi",
+    name: "Restaurant Saperavi",
+    type: "Restaurant · Chișinău",
+    description:
+      "Perdele diafane realizate pentru Restaurant Saperavi, care completează ferestrele ample și decorul în tonuri naturale al spațiului.",
+    logo: "/images/partners/logos/saperavi.svg",
+    logoTone: "dark",
+    images: [
+      {
+        src: "/images/partners/saperavi/01.jpg",
+        alt: "Perdele realizate pentru Restaurant Saperavi",
+      },
+      {
+        src: "/videos/partners/saperavi/01.mp4",
+        alt: "Prezentare video a amenajării cu perdele la Restaurant Saperavi",
+        type: "video",
+        poster: "/images/partners/saperavi/01.jpg",
+      },
+    ],
+  },
   {
     id: "grand-elysee",
     name: "Grand Elysée",

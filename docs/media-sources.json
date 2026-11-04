@@ -1,5 +1,5 @@
 {
-  "checkedOn": "2026-09-09",
+  "checkedOn": "2026-11-04",
   "logos": [
     {
       "id": "clinica-sante",
@@ -41,6 +41,11 @@
       "userReference": "https://share.google/o9Y9DA2aQthr6ubr4",
       "asset": null,
       "note": "Confirmed restaurant on I. Franco street. Search found facade signage, not a usable verified standalone logo. Display plain company name; do not use Dacia car brand logo."
+    },
+    {
+      "id": "saperavi",
+      "page": "https://saperavi.md/",
+      "asset": "https://saperavi.md/catalog/view/theme/default/image/logo.svg"
     }
   ],
   "certificate": {
@@ -63,6 +68,11 @@
       "source": "video_pentru_galerie_3.mp4",
       "destination": "public/videos/gallery/atelier-3.mp4",
       "treatment": "Unmodified; controls, playsInline, preload metadata; no autoplay."
+    },
+    {
+      "source": "Saperavi Companie/0-02-05-9215b7242b8e5602446a8494acbaf14238810b404f91540c5ee32501623a85a7_225ac0f23a7.mp4",
+      "destination": "public/videos/partners/saperavi/01.mp4",
+      "treatment": "Unmodified; controls, playsInline, preload metadata; no autoplay. Photo from same project used as poster and thumbnail."
     }
   ],
   "restoration": {
@@ -71,5 +81,12 @@
     "screenshots": "Extract ONLY original terrace photo; remove phone and social UI, black bars and captions. Preserve original photo aspect ratio and scene.",
     "greenPark02": "User explicitly approved removal of seated smoking person, smoke and hookah. Restore chair, railing and trees naturally.",
     "export": "JPEG quality 85 via sips; generated PNG originals retained."
-  }
+  },
+  "images": [
+    {
+      "source": "Saperavi Companie/0-02-05-2417a85ff9b34772b5b4e07761e878ece2e9fa60a7e1dd8997a12a282ed18ae9_225ac0f5085.jpg",
+      "destination": "public/images/partners/saperavi/01.jpg",
+      "treatment": "Converted from PNG data in the supplied .jpg file to JPEG; numbered filename matching existing partner folders."
+    }
+  ]
 }
