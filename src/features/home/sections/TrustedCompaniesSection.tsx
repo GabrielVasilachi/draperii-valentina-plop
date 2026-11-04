@@ -1,95 +1,66 @@
 import { useState } from "react";
 import type { Navigate } from "../../../shared/types/navigation";
 import { PartnerGalleryModal } from "../components/PartnerGalleryModal";
+import { PartnerCarousel } from "../components/PartnerCarousel";
 import { partnerProjects, type PartnerProject } from "../data/partners";
 
-export function TrustedCompaniesSection({ navigate }: { navigate: Navigate }) {
-  const [selectedPartner, setSelectedPartner] = useState<PartnerProject | null>(
-    null,
+function PartnerLogo({ partner }: { partner: PartnerProject }) {
+  return (
+    <span className={`partner-brand ${partner.logoTone}`}>
+      {partner.logo ? (
+        <img src={partner.logo} alt={partner.logoAlt ?? `Logo ${partner.name}`} loading="lazy" />
+      ) : (
+        <span className="partner-nameplate">{partner.name}</span>
+      )}
+    </span>
   );
-  const partnersWithGallery = partnerProjects.filter(
-    (partner) => partner.images.length > 0,
-  );
-  const partnersWithoutGallery = partnerProjects.filter(
-    (partner) => partner.images.length === 0,
-  );
-  const displayedPartners = [
-    ...partnersWithGallery,
-    ...partnersWithoutGallery,
-  ];
+}
 
-  const renderPartnerCardContent = (partner: PartnerProject) => (
-    <>
-      <span className="partner-card-logo">
-        {partner.logo ? (
-          <img
-            src={partner.logo}
-            alt={partner.logoAlt ?? `Logo ${partner.name}`}
-            loading="lazy"
-          />
-        ) : (
-          <span className="partner-nameplate">{partner.name}</span>
-        )}
-      </span>
-      <span className="partner-card-copy">
-        <span>
-          <small>{partner.type}</small>
-          <b>{partner.name}</b>
-          {partner.images.length > 0 && (
-            <span className="partner-card-mobile-action" aria-hidden="true">
-              Vezi galeria
-            </span>
-          )}
-        </span>
-        {partner.images.length > 0 && (
-          <span className="partner-card-action" aria-hidden="true">
-            <span>Vezi proiectul</span>
-          </span>
-        )}
-      </span>
-    </>
-  );
+export function TrustedCompaniesSection({ navigate }: { navigate: Navigate }) {
+  const [selectedPartner, setSelectedPartner] = useState<PartnerProject | null>(null);
 
   return (
     <>
-      <section className="trusted-by" aria-labelledby="trusted-companies-title">
-        <div className="trusted-by-copy">
-          <span>Au ales atelierul nostru</span>
-          <h2 id="trusted-companies-title">Companii cu care am lucrat</h2>
-          <p>Restaurante, săli de evenimente și instituții. Descoperă colaborările noastre.</p>
-        </div>
-
-        <div className="company-row" aria-label="Proiecte pentru parteneri">
-          {displayedPartners.map((partner) =>
-            partner.images.length > 0 ? (
+      <section className="trusted-by" aria-label="Companii cu care am lucrat">
+        <div className="partners-showcase">
+          <header className="partners-minimal-heading">
+            <h2>Companii cu care am lucrat</h2>
+          </header>
+          <PartnerCarousel
+            galleryOpen={selectedPartner !== null}
+            onSelect={setSelectedPartner}
+            renderLogo={(partner) => <PartnerLogo partner={partner} />}
+          />
+          <div className="partners-logo-wall" aria-label="Colaborări cu galerie foto">
+            {partnerProjects.filter((partner) => partner.images.length > 0).map((partner) => (
               <button
                 key={partner.id}
-                className={`partner-card ${partner.logoTone}`}
                 type="button"
+                className={`partner-logo-link partner-logo-link--${partner.id}`}
                 onClick={() => setSelectedPartner(partner)}
-                aria-label={`Deschide galeria colaborării cu ${partner.name}`}
+                aria-label={`Vezi proiectul ${partner.name}`}
+                aria-haspopup="dialog"
+                title={partner.name}
               >
-                {renderPartnerCardContent(partner)}
+                <PartnerLogo partner={partner} />
+                <span className="partner-logo-invitation">Vezi proiectul <span aria-hidden="true">↗</span></span>
               </button>
-            ) : (
-              <article
-                key={partner.id}
-                className={`partner-card no-gallery ${partner.logoTone}`}
-                aria-label={`${partner.name}, colaborare fără fotografii disponibile`}
-              >
-                {renderPartnerCardContent(partner)}
-              </article>
-            ),
-          )}
+            ))}
+          </div>
+          <div className="partners-other">
+            <p>Și alte companii și instituții care ne-au acordat încrederea</p>
+            <div className="partners-other-logos">
+              {partnerProjects.filter((partner) => partner.images.length === 0).map((partner) => (
+                <div key={partner.id} className="partner-logo-static" title={partner.name}>
+                  <PartnerLogo partner={partner} />
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
-
       {selectedPartner && (
-        <PartnerGalleryModal
-          partner={selectedPartner}
-          navigate={navigate}
-          onClose={() => setSelectedPartner(null)}
-        />
+        <PartnerGalleryModal partner={selectedPartner} navigate={navigate} onClose={() => setSelectedPartner(null)} />
       )}
     </>
   );

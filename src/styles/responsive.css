@@ -2,7 +2,6 @@
   .desktop-nav { gap: 12px; }
   .desktop-nav button { font-size: 13px; }
   .header-phone { font-size: 13px; }
-  .company-row { grid-template-columns: repeat(3,1fr); }
   .featured .product-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .catalog-layout { grid-template-columns: minmax(0, 1fr) 270px; gap: 26px; }
   .catalog-results .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -68,14 +67,26 @@
   .client-proof > div { align-self: start; }
   .client-proof p { display: none; }
 
-  .trusted-by { padding: 62px 20px; }
-  .company-row { margin-right: -20px; padding-right: 20px; grid-template-columns: none; grid-auto-columns: 160px; grid-auto-flow: column; overflow-x: auto; scroll-snap-type: inline mandatory; scrollbar-width: none; }
-  .company-row::-webkit-scrollbar { display: none; }
-  .partner-card { scroll-snap-align: start; }
-  .partner-card-copy > span:first-child { width: 100%; }
-  .partner-card:hover .partner-card-copy b { opacity: 1; transform: none; }
-  .partner-card-action { display: none; }
-  .partner-card-mobile-action { width: fit-content; min-height: 28px; margin-top: 7px; padding: 0 9px; border: 1px solid var(--sand); border-radius: 999px; display: inline-flex; align-items: center; color: var(--brown); font-family: "Manrope", sans-serif; font-size: 9px; font-weight: 700; letter-spacing: .05em; line-height: 1; text-transform: uppercase; }
+  .trusted-by { padding: 48px 22px 40px; }
+  .partners-minimal-heading { max-width: 360px; margin: 0 auto 24px; }
+  .partners-minimal-heading h2 { margin: 0; font-size: clamp(34px, 8.8vw, 44px); line-height: 1.08; text-wrap: balance; }
+  .partners-logo-wall { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 20px; row-gap: 18px; }
+  .partner-logo-link { padding: 14px 0 10px; gap: 10px; touch-action: manipulation; }
+  .partners-showcase .partner-brand { height: 82px; padding: 0 8px; }
+  .partners-showcase .partner-brand img { max-width: min(100%, 140px); max-height: 68px; filter: none; opacity: 1; }
+  .partners-showcase .partner-brand.dark img, .partners-showcase .partner-brand.charcoal img { filter: none; }
+  .partners-showcase .partner-brand.forest img { filter: brightness(0) saturate(100%) invert(18%) sepia(18%) saturate(801%) hue-rotate(104deg) brightness(95%) contrast(91%); }
+  .partners-showcase .partner-logo-link--paradis .partner-brand img { filter: invert(1); max-height: 82px; }
+  .partners-showcase .partner-nameplate { font-size: 22px; }
+  .partner-logo-invitation { min-height: 28px; color: var(--deep-brown); font-size: 11px; gap: 6px; }
+  .partner-logo-invitation > span { font-size: 17px; }
+  .partner-logo-link:active .partner-brand { transform: scale(.96); }
+  .partner-logo-link:hover .partner-brand img, .partner-logo-link:focus-visible .partner-brand img { transform: none; }
+  .partners-other { margin-top: 28px; padding-top: 24px; }
+  .partners-other > p { max-width: 260px; margin: 0 auto 20px; font-size: 11px; line-height: 1.7; text-wrap: balance; }
+  .partners-other-logos { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 20px; row-gap: 18px; }
+  .partners-other .partner-brand { height: 68px; }
+  .partners-other .partner-brand img { max-height: 54px; }
 
   .reviews-heading { margin-bottom: 28px; align-items: flex-start; }
   .reviews-heading h2 { font-size: 38px; }
@@ -152,17 +163,23 @@
   .footer-nav button { flex: 0 0 auto; }
 
   .partner-gallery-backdrop { padding: 0; }
-  .partner-gallery-modal { width: 100%; height: 100%; max-height: none; display: block; overflow: auto; }
-  .partner-gallery-visual { min-height: 0; height: 55vh; }
-  .partner-gallery-info { padding: 34px 20px; }
-  .partner-gallery-logo { width: 240px; max-width: 75%; }
+  .partner-gallery-modal { width: 100%; height: 100dvh; max-height: none; display: block; overflow: auto; overscroll-behavior: contain; }
+  .partner-gallery-close { width: 44px; height: 44px; position: fixed; top: max(12px, env(safe-area-inset-top)); right: max(12px, env(safe-area-inset-right)); box-shadow: 0 2px 16px rgba(0,0,0,.12); }
+  .partner-gallery-arrow { width: 44px; height: 44px; }
+  .partner-gallery-visual { min-height: 0; height: clamp(260px, 54svh, 540px); }
+  .partner-gallery-counter.for-video { top: 16px; left: 16px; right: auto; }
+  .partner-gallery-info { padding: 24px 22px max(30px, env(safe-area-inset-bottom)); display: flex; flex-direction: column; overflow: visible; }
+  .partner-gallery-info h2 { font-size: 32px; line-height: 1.1; }
+  .partner-gallery-kicker { font-size: 10px; color: var(--deep-brown); letter-spacing: .08em; }
+  .partner-gallery-thumbnails { order: -1; margin: 0 0 24px; padding: 3px 3px 8px; display: flex; gap: 8px; overflow-x: auto; scrollbar-width: thin; scrollbar-color: #b19b83 transparent; }
+  .partner-gallery-thumbnails button { width: 64px; height: 72px; flex: 0 0 64px; }
+  .partner-gallery-cta { min-height: 48px; margin-top: 12px; flex-shrink: 0; }
+  .partner-gallery-logo { width: 148px; height: 64px; max-width: 75%; margin-bottom: 20px; flex-shrink: 0; }
+  .partner-gallery-logo img { max-height: 48px; }
 }
 
 @media (max-width: 520px) {
   .site-header .brand-mark { display: none; }
-  .company-row { align-items: start; }
-  .partner-card { min-height: 0; height: auto; align-self: start; grid-template-rows: 96px auto; }
-  .partner-card-copy { min-height: 0; padding: 10px 12px; align-items: flex-start; }
   .shop-hero { min-height: 700px; }
   .shop-hero h1 { font-size: 49px; }
   .shop-hero-content { padding-bottom: 30px; }
@@ -267,4 +284,15 @@
   .footer-credit { margin-top: 14px; justify-content: flex-start; }
   .footer-credit a { font-size: 11px; }
   .floating-call { width: 46px; height: 46px; right: 14px; bottom: max(14px, env(safe-area-inset-bottom)); }
+}
+
+@media (max-width: 820px) {
+  .partners-showcase > .partners-logo-wall, .partners-showcase > .partners-other { display: none; }
+  .partners-mobile-carousel { display: block; }
+  .partners-carousel-toolbar { text-align: center; margin: -4px 0 14px; color: #6e716e; font-size: 11px; }
+  .partners-carousel-viewport { display: flex; overflow-x: auto; margin-inline: -22px; padding-block: 6px; scrollbar-width: none; overscroll-behavior-x: contain; overflow-anchor: none; scroll-behavior: auto; }
+  .partners-carousel-viewport::-webkit-scrollbar { display: none; }
+  .partners-carousel-group { display: flex; flex: 0 0 auto; gap: 24px; padding-right: 24px; }
+  .partners-carousel-group > .partner-logo-link, .partners-carousel-group > .partner-logo-static { width: clamp(140px, 40vw, 200px); flex: 0 0 auto; padding: 14px 0 10px; display: flex; align-items: center; flex-direction: column; gap: 10px; user-select: none; }
+  .partners-carousel-group img { -webkit-user-drag: none; }
 }
